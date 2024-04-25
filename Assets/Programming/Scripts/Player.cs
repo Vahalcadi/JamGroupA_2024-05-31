@@ -34,13 +34,8 @@ public class Player : MonoBehaviour
     {
         if (input == Vector3.zero)
             return;
-
-        Matrix4x4 matrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
-        Vector3 modifiedInput = matrix.MultiplyPoint3x4(input);
-
-        var relative = (transform.position + modifiedInput) - transform.position;
-
-        Quaternion rotation = Quaternion.LookRotation(relative, Vector3.up);
+     
+        Quaternion rotation = Quaternion.LookRotation(input.AdjustToIsometricPlane(), Vector3.up);
 
         /**
          * comment this: transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
@@ -56,6 +51,6 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
-        rb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
+        rb.MovePosition(transform.position + (transform.forward * input.normalized.magnitude) * speed * Time.deltaTime);
     }
 }
