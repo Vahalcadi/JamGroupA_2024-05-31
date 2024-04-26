@@ -8,12 +8,12 @@ public class GenericDoor : MonoBehaviour
     private bool isOpen;
     private bool isInteractable;
 
-    private void Start()
+    public virtual void Start()
     {
         isInteractable = true;
     }
 
-    public void OpenDoor()
+    public virtual void OpenDoor()
     {
         if (!isInteractable)
             return;
@@ -22,7 +22,7 @@ public class GenericDoor : MonoBehaviour
         anim.SetBool("isOpen",isOpen);
     }
 
-    public void ToggleIsInteractable()
+    public virtual void ToggleIsInteractable()
     {
         isInteractable = !isInteractable;
     }
