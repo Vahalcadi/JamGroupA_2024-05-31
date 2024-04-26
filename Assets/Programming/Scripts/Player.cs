@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,8 +8,16 @@ public class Player : MonoBehaviour
     private Vector2 vector;
     private Vector3 input;
     private InputManager inputManager;
+    private bool isAttacking;
 
+    [Header("Collision info")]
+    public Transform attackCheck;
+    public float attackCheckRadius;
+
+    [Header("Animator")]
     [SerializeField] private Animator anim;
+
+    [Header("Movement")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed;
     [SerializeField] private float turnSpeed;
@@ -23,8 +32,11 @@ public class Player : MonoBehaviour
     {
         //vector = inputManager.Movement().normalized;
 
-        if (inputManager.Attack())
+        if (inputManager.Attack() && !isAttacking)
+        {
             AttackAnimationTest();
+            Attack();
+        }
 
         input = new Vector3(inputManager.Movement().normalized.x, 0, inputManager.Movement().normalized.y);
         Look();
@@ -62,5 +74,32 @@ public class Player : MonoBehaviour
     private void AttackAnimationTest()
     {
         anim.SetTrigger("isAttacking");
+    }
+
+    private void Attack()
+    {
+        Collider[] colliders = Physics.OverlapSphere(attackCheck.position, attackCheckRadius);
+        GenericDoor animator;
+
+        foreach (var hit in colliders)
+        {
+            Debug.Log(hit.gameObject);
+
+            if ((animator = hit.GetComponent<GenericDoor>()) != null)
+            {
+                animator.OpenDoor();
+            }
+                
+        }
+    }
+
+    private void ToggleCanAttack() // used as an animation trigger event
+    {
+        isAttacking = !isAttacking;
+    }
+
+    protected virtual void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
 }
