@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Must be equal to the number of flames GameObject inside the game")]
     [SerializeField] private int totalNumberOfFlames;
+
+    [Header("Game Over Window for the prototype")]
+    [SerializeField] GameObject gameOverWindow; //added for the prototype
 
     private int numberOfFlamesCollected = 0;
 
@@ -36,12 +40,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)) // added for the prototype
+        {
+            EndGame(); 
+        }
     }
 
     public void EndGame()
     {
-        Debug.Log("Game Over, You win");  
+        Debug.Log("Game Over, You win");
+        gameOverWindow.SetActive(true); //added for the prototype
     }
 
     public void CollectFlame()
