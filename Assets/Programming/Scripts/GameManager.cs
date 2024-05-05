@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     private int numberOfFlamesCollected = 0;
 
+    public int numberOfKeysCollected = 0; //added for the prototype
+
     public int NumberOfFlamesCollected { get { return numberOfFlamesCollected; } }
     public int TotalNumberOfFlames { get { return totalNumberOfFlames; } }
 
@@ -55,5 +57,10 @@ public class GameManager : MonoBehaviour
     public void CollectFlame()
     {
         numberOfFlamesCollected++;
+    }
+
+    public void CollectKey()
+    {
+        numberOfKeysCollected++;
     }
 }

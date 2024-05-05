@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     private Vector3 input;
     private InputManager inputManager;
     private bool isAttacking;
+    public GameManager gameManager; //added for the prototype
+
+    [Header("Player Health")]
+    public float playerHealth; //added for the prototype
 
     [Header("Collision info")]
     public Transform attackCheck;
@@ -40,6 +44,20 @@ public class Player : MonoBehaviour
 
         input = new Vector3(inputManager.Movement().normalized.x, 0, inputManager.Movement().normalized.y);
         Look();
+
+        #region Damagetest input
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            playerHealth--; //added for the prototype and testing
+        }
+        #endregion
+
+        #region DamageDeath 
+        if (playerHealth <= 0)
+        {
+            gameManager.EndGame(); //added for the prototype and testing
+        }
+        #endregion
     }
 
     private void FixedUpdate()

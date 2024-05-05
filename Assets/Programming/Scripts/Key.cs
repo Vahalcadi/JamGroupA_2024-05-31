@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendlyFlames : Pickable
+public class Key : Pickable
 {
-    [Header("Check collected for HUD")]
-    [SerializeField] public bool isCollected = false; //added for prototype
-
     public override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             base.OnTriggerEnter(other);
 
-            GameManager.Instance.CollectFlame();
-
-            isCollected = true; //added for prototype
+            GameManager.Instance.CollectKey();
 
             gameObject.SetActive(false);
         }
     }
 }
-
-
