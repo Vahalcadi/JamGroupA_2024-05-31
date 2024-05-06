@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GenericDoor : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
-    private bool isOpen;
-    private bool isInteractable;
+    [SerializeField] protected Animator anim;
+    protected bool isOpen;
+    protected bool isInteractable;
 
     public virtual void Start()
     {
@@ -19,7 +17,7 @@ public class GenericDoor : MonoBehaviour
             return;
 
         isOpen = !isOpen;
-        anim.SetBool("isOpen",isOpen);
+        anim.SetBool("isOpen", isOpen);
     }
 
     public virtual void ToggleIsInteractable()

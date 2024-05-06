@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEngine;
-
 public class KeyDoor : GenericDoor
 {
-    private Animator animKey;
+    /*private Animator animKey;
     private bool isKeyOpen;
     private bool isKeyInteractable;
-    private bool isAlreadyOpen = false;
-    [SerializeField] GameManager gameManager;
+    private bool isAlreadyOpen = false;*/
 
-    // Start is called before the first frame update
+    public override void Start()
+    {
+        isInteractable = false;
+    }
+
     public override void OpenDoor()
+    {
+        if (isOpen)
+            return;
+
+        if (GameManager.Instance.numberOfKeysCollected > 0)
+        {
+            isInteractable = true;
+            GameManager.Instance.numberOfKeysCollected--;
+        }
+        else
+            isInteractable = false;
+
+        base.OpenDoor();
+    }
+
+    /*public override void OpenDoor()
     {
         if (!isKeyInteractable)
             return;
@@ -30,5 +44,5 @@ public class KeyDoor : GenericDoor
             animKey.SetBool("isOpen", isKeyOpen);
             return;
         }
-    }
+    }*/
 }
