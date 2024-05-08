@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,14 +11,13 @@ public class GameManager : MonoBehaviour
     [Header("Must be equal to the number of flames GameObject inside the game")]
     [SerializeField] private int totalNumberOfFlames;
 
-    [Header("Game Over Window for the prototype")]
-    [SerializeField] GameObject gameOverWindow; //added for the prototype
-
     private int numberOfFlamesCollected = 0;
 
-    public int numberOfKeysCollected = 0; //added for the prototype
+    private int numberOfKeysCollected = 0;
 
     public int NumberOfFlamesCollected { get { return numberOfFlamesCollected; } }
+    public int NumberOfKeysCollected { get { return numberOfKeysCollected; } }
+
     public int TotalNumberOfFlames { get { return totalNumberOfFlames; } }
 
 
@@ -29,28 +29,44 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void EndGame(string dialog)
     {
-        Debug.Log(numberOfKeysCollected);
+        PauseGame(true);
+
+        QuestionDialogUI.Instance.ShowQuestion(dialog,
+            () =>
+            {
+                PauseGame(false);
+                SceneManager.LoadScene(GameMenu.Instance.currentSceneName);
+            },
+            () =>
+            {
+                QuestionDialogUI.Instance.ShowQuestion("This will close the game, are you sure?",
+                    () =>
+                    {
+                        Application.Quit();
+                    },
+                    () =>
+                    {
+                        EndGame(dialog);
+                    });
+            });
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void PauseGame(bool _pause)
     {
-        Debug.Log(numberOfKeysCollected);
-
-        if (Input.GetKeyDown(KeyCode.Escape)) // added for the prototype
+        if (_pause)
         {
-            EndGame();
+            Time.timeScale = 0;
+            InputManager.Instance.OnDisable();
+            Cursor.visible = true;
         }
-    }
-
-    public void EndGame()
-    {
-        Debug.Log("Game Over, You win");
-        gameOverWindow.SetActive(true); //added for the prototype
+        else
+        {
+            InputManager.Instance.OnEnable();
+            Time.timeScale = 1;
+            Cursor.visible = false;
+        }
     }
 
     public void CollectFlame()
@@ -58,8 +74,15 @@ public class GameManager : MonoBehaviour
         numberOfFlamesCollected++;
     }
 
+    public void UseKey()
+    {
+        numberOfKeysCollected--;
+        HUDManager.Instance.KeyTextUpdate();
+    }
+
     public void CollectKey()
     {
         numberOfKeysCollected++;
+        HUDManager.Instance.KeyTextUpdate();
     }
 }

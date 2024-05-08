@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FriendlyFlames : Pickable
 {
-    [Header("Check collected for HUD")]
-    [SerializeField] public bool isCollected = false; //added for prototype
+
+    [Header("The number of the flame in the UI. It should range from 1 to X")]
+    [SerializeField] private int flameNumber;
 
     public override void OnTriggerEnter(Collider other)
     {
@@ -14,9 +15,7 @@ public class FriendlyFlames : Pickable
             base.OnTriggerEnter(other);
 
             GameManager.Instance.CollectFlame();
-
-            isCollected = true; //added for prototype
-
+            HUDManager.Instance.UpdateFlameSpriteUI(flameNumber);
             gameObject.SetActive(false);
         }
     }

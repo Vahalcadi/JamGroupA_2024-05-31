@@ -20,6 +20,6 @@ public class EndZone : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(gameManager.NumberOfFlamesCollected == gameManager.TotalNumberOfFlames)
-            gameManager.EndGame();
+            gameManager.EndGame("You Won! Play again?");
     }
 }

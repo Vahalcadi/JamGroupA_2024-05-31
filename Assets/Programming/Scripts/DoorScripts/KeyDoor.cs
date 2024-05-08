@@ -15,10 +15,10 @@ public class KeyDoor : GenericDoor
         if (isOpen)
             return;
 
-        if (GameManager.Instance.numberOfKeysCollected > 0)
+        if (GameManager.Instance.NumberOfKeysCollected > 0)
         {
             isInteractable = true;
-            GameManager.Instance.numberOfKeysCollected--;
+            GameManager.Instance.UseKey();
         }
         else
             isInteractable = false;

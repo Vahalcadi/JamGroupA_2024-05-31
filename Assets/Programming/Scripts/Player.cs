@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector2 vector;
     private Vector3 input;
     private InputManager inputManager;
     private bool isAttacking;
-    public GameManager gameManager; //added for the prototype
 
     [Header("Player Health")]
-    public float playerHealth; //added for the prototype
+    [SerializeField] private int maxHealth; //added for the prototype
+    public int MaxHealth { get { return  maxHealth; } }
+    public int CurrentHealth { get; set; }
+
 
     [Header("Collision info")]
     public Transform attackCheck;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         inputManager = InputManager.Instance;
+        CurrentHealth = MaxHealth;
     }
 
     // Update is called once per frame
@@ -48,14 +50,7 @@ public class Player : MonoBehaviour
         #region Damagetest input
         if (Input.GetKeyDown(KeyCode.E))
         {
-            playerHealth--; //added for the prototype and testing
-        }
-        #endregion
-
-        #region DamageDeath 
-        if (playerHealth <= 0)
-        {
-            gameManager.EndGame(); //added for the prototype and testing
+            TakeDamage(1); //added for the prototype and testing
         }
         #endregion
     }
@@ -64,6 +59,16 @@ public class Player : MonoBehaviour
     {
         Movement();
     }
+
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+        HUDManager.Instance.UpdateHealthBar();
+
+        if (CurrentHealth == 0)
+            GameManager.Instance.EndGame("You Lost!, Play Again?");       
+    }
+
 
     private void Look()
     {
