@@ -96,6 +96,7 @@ public class Player : MonoBehaviour
     {
         Collider[] colliders = Physics.OverlapSphere(attackCheck.position, attackCheckRadius);
         GenericDoor animator;
+        Torches torch;
 
         foreach (var hit in colliders)
         {
@@ -104,6 +105,11 @@ public class Player : MonoBehaviour
             if ((animator = hit.GetComponent<GenericDoor>()) != null)
             {
                 animator.OpenDoor();
+            }
+
+            if ((torch = hit.GetComponent<Torches>()) != null)
+            {
+                torch.AddValueToDoorParent();
             }
         }
     }
