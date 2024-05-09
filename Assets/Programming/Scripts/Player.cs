@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,10 +5,11 @@ public class Player : MonoBehaviour
     private Vector3 input;
     private InputManager inputManager;
     private bool isAttacking;
+    private float attackCooldownTimer;
 
     [Header("Player Health")]
     [SerializeField] private int maxHealth; //added for the prototype
-    public int MaxHealth { get { return  maxHealth; } }
+    public int MaxHealth { get { return maxHealth; } }
     public int CurrentHealth { get; set; }
 
 
@@ -21,6 +19,7 @@ public class Player : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private Animator anim;
+    [SerializeField] private float attackCooldown;
 
     [Header("Movement")]
     [SerializeField] private Rigidbody rb;
@@ -36,12 +35,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //vector = inputManager.Movement().normalized;
+        attackCooldownTimer -= Time.deltaTime;
 
-        if (inputManager.Attack() && !isAttacking)
+        if (inputManager.Attack() && !isAttacking && attackCooldownTimer < 0)
         {
-            AttackAnimationTest();
-            Attack();
+            AttackAnimationTrigger();
         }
 
         input = new Vector3(inputManager.Movement().normalized.x, 0, inputManager.Movement().normalized.y);
@@ -66,7 +64,7 @@ public class Player : MonoBehaviour
         HUDManager.Instance.UpdateHealthBar();
 
         if (CurrentHealth == 0)
-            GameManager.Instance.EndGame("You Lost!, Play Again?");       
+            GameManager.Instance.EndGame("You Lost!, Play Again?");
     }
 
 
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
     {
         if (input == Vector3.zero)
             return;
-     
+
         Quaternion rotation = Quaternion.LookRotation(input.AdjustToIsometricPlane(), Vector3.up);
 
         /**
@@ -94,12 +92,7 @@ public class Player : MonoBehaviour
         rb.MovePosition(transform.position + (transform.forward * input.normalized.magnitude) * speed * Time.deltaTime);
     }
 
-    private void AttackAnimationTest()
-    {
-        anim.SetTrigger("isAttacking");
-    }
-
-    private void Attack()
+    private void Attack() //animation trigger event
     {
         Collider[] colliders = Physics.OverlapSphere(attackCheck.position, attackCheckRadius);
         GenericDoor animator;
@@ -112,8 +105,14 @@ public class Player : MonoBehaviour
             {
                 animator.OpenDoor();
             }
-                
         }
+    }
+
+    public void AttackAnimationTrigger()
+    {
+        attackCooldownTimer = attackCooldown;
+        ToggleCanAttack();
+        anim.SetBool("IsAttacking", isAttacking);
     }
 
     private void ToggleCanAttack() // used as an animation trigger event
