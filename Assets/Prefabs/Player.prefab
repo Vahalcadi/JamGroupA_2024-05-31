@@ -327,7 +327,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &3757410916595823307
 MonoBehaviour:
@@ -345,6 +345,7 @@ MonoBehaviour:
   attackCheck: {fileID: 1211167921729818158}
   attackCheckRadius: 1.2
   anim: {fileID: 4373181515262749774}
+  attackCooldown: 0.1
   rb: {fileID: 4695683045154252660}
   speed: 5
   turnSpeed: 360
