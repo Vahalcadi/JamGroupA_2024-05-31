@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState : MonoBehaviour
+public class EnemyState
 {
     protected EnemyStateMachine stateMachine;
     protected Enemy enemyBase;
     protected Rigidbody rb;
 
-    //private string animBoolName;
+    private string animBoolName;
 
     protected float stateTimer;
     protected bool triggerCalled;
@@ -17,7 +17,7 @@ public class EnemyState : MonoBehaviour
     {
         this.enemyBase = _enemyBase;
         this.stateMachine = _stateMachine;
-        //this.animBoolName = _animBoolName;
+        this.animBoolName = _animBoolName;
     }
 
     public virtual void Update()

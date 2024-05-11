@@ -51,10 +51,12 @@ public class Entity : MonoBehaviour
     public virtual void SetZeroVelocity()
     {
         rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 
     public virtual void MoveToPlayer()
     {
+        //Debug.Log("Moving to player");
         //rb.velocity = new Vector2(_xVelocity, _yVelocity);
         var direction = (PlayerManager.Instance.Player.transform.position - transform.position).normalized;
 

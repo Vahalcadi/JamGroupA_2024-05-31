@@ -5,14 +5,17 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
     public MeleeEnemyIdleState IdleState { get; private set; }
-    public MeleeEnemyMoveState MoveState { get; private set; }
+    public MeleeEnemyBattleState BattleState { get; private set; }
+    public MeleeEnemyAttackState AttackState { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
 
         IdleState = new MeleeEnemyIdleState(this, stateMachine, "Idle", this);
-        MoveState = new MeleeEnemyMoveState(this, stateMachine, "Move", this);
+        BattleState = new MeleeEnemyBattleState(this, stateMachine, "Move", this);
+        AttackState = new MeleeEnemyAttackState(this, stateMachine, "Attack", this);
+
     }
 
     protected override void Start()

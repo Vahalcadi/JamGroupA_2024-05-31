@@ -11,6 +11,7 @@ public class MeleeEnemyIdleState : MeleeEnemyGroundedState
     public override void Enter()
     {
         base.Enter();
+        //Debug.Log("2. IdleState");
     }
 
     public override void Exit()
@@ -22,11 +23,9 @@ public class MeleeEnemyIdleState : MeleeEnemyGroundedState
     {
         base.Update();
 
-        if (stateTimer < 0)
+        /*if (stateTimer < 0)
         {
             stateMachine.ChangeState(enemy.MoveState);
-        }
-
-
+        }*/
     }
 }

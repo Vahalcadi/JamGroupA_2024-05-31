@@ -9,14 +9,11 @@ public class Enemy : Entity
     [Header("Stunned info")]
     public float stunCooldown = 1;
     protected float stunCooldownTimer;
-
-    [Header("Move info")]
-    public float moveSpeed = 1.5f;
-    public float idleTime = 2;
-    public float battleTime = 7;
+    
 
     [Header("Attack info")]
     public float attackCooldown;
+    public float attackDistance = 2;
     public float minAttackCooldown = .35f;
     public float maxAttackCooldown = .55f;
     [HideInInspector] public float lastTimeAttacked;
@@ -39,7 +36,7 @@ public class Enemy : Entity
     {
         base.Update();
         stunCooldownTimer = Time.deltaTime;
-        stateMachine.currentState.Update();
+        stateMachine.CurrentState.Update();
     }
 
     public virtual void GetStunned()
@@ -53,12 +50,20 @@ public class Enemy : Entity
             return true;
         return false;
     }
-    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+    public virtual void AnimationFinishTrigger() => stateMachine.CurrentState.AnimationFinishTrigger();
 
     public virtual void AnimationAttackTrigger() { }
 
     public virtual void AssignLastAnimName(string _animBoolName)
     {
         LastAnimBoolName = _animBoolName;
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
     }
 }
