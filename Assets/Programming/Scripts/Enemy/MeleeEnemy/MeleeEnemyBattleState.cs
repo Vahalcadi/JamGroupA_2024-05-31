@@ -36,7 +36,6 @@ public class MeleeEnemyBattleState : EnemyState
 
         }
 
-        //Debug.Log("3. Battle State");
         enemy.MoveToPlayer();
     }
 

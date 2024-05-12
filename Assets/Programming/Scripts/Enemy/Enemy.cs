@@ -64,6 +64,7 @@ public class Enemy : Entity
         base.OnDrawGizmos();
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+
+        Gizmos.DrawLine(transform.position, transform.position + (transform.rotation * new Vector3(0, 0, attackDistance)));
     }
 }

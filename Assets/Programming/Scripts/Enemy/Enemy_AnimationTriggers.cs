@@ -15,18 +15,21 @@ public class Enemy_AnimationTriggers : MonoBehaviour
     {
         enemy.AnimationAttackTrigger();
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemy.attackCheck.position, enemy.attackCheckRadius);
+        Collider[] colliders = Physics.OverlapSphere(enemy.attackCheck.position, enemy.attackCheckRadius);
 
         Player player;
 
         foreach (var hit in colliders)
         {
+            
+            Debug.Log(hit);
+
             if ((player = hit.GetComponent<Player>()) != null)
             {
+                Debug.Log("Damage Player");
+                Debug.Log(enemy.Damage);
                 player.TakeDamage(enemy.Damage);
             }
         }
-
-
     }
 }

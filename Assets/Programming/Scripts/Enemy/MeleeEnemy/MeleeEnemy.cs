@@ -25,5 +25,9 @@ public class MeleeEnemy : Enemy
         stateMachine.Initialize(IdleState);
     }
 
-    //add override Die()
+    public override void AnimationAttackTrigger()
+    {
+        base.AnimationAttackTrigger();
+    }
+
 }
