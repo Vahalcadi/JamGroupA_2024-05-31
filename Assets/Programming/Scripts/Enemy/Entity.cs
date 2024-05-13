@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -21,17 +18,19 @@ public class Entity : MonoBehaviour
     public int Damage { get { return damage; } }
     public int CurrentHP { get { return currentHP; } }
 
+    public int Speed { get { return speed; } }
+
     public bool IsDead { get; private set; }
     public bool IsInvincible { get; private set; }
 
     protected virtual void Awake()
     {
-        
+
     }
 
     protected virtual void Update()
     {
-        
+
     }
 
     protected virtual void Start()

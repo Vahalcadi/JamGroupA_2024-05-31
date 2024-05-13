@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeEnemyBattleState : EnemyState
@@ -35,8 +33,8 @@ public class MeleeEnemyBattleState : EnemyState
                 stateMachine.ChangeState(enemy.AttackState);
 
         }
-
-        enemy.MoveToPlayer();
+        else
+            enemy.MoveToPlayer();
     }
 
     public override void Exit()
