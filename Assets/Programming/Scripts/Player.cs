@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float speed;
     [SerializeField] private float turnSpeed;
+
+    [Header("Damage")]
+    [SerializeField] private int damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +101,7 @@ public class Player : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(attackCheck.position, attackCheckRadius);
         GenericDoor animator;
         Torches torch;
+        Entity enemy;
 
         foreach (var hit in colliders)
         {
@@ -110,6 +115,10 @@ public class Player : MonoBehaviour
             if ((torch = hit.GetComponent<Torches>()) != null)
             {
                 torch.AddValueToDoorParent();
+            }
+            if ((enemy = hit.GetComponent<Entity>()) != null)
+            {
+                enemy.TakeDamage(damage);
             }
         }
     }

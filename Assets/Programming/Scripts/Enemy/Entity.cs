@@ -43,6 +43,9 @@ public class Entity : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP = Mathf.Clamp(currentHP - damage, 0, maxHealth);
+
+        if (currentHP == 0)
+            Destroy(this.gameObject);
     }
 
     public void MakeInvincible(bool _invincible) => IsInvincible = _invincible;
