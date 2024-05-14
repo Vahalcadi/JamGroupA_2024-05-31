@@ -31,7 +31,7 @@ public class HUDManager : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        hpSlider.value = playerInstance.CurrentHealth;
+        hpSlider.value = playerInstance.CurrentHP;
     }
 
     public void KeyTextUpdate()

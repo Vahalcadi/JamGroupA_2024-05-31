@@ -1,89 +1,96 @@
+using System.Xml;
+using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    private Vector3 input;
-    private InputManager inputManager;
-    private bool isAttacking;
+    public Vector3 Input { get; set; }
+    public InputManager InputManager { get; set; }
     private float attackCooldownTimer;
-    private bool isInvincible;
-    private bool Move;
-    private bool Dash;
-
-    [Header("Player Health")]
-    [SerializeField] private int maxHealth; //added for the prototype
-    public int MaxHealth { get { return maxHealth; } }
-    public int CurrentHealth { get; set; }
-
-
-    [Header("Collision info")]
-    public Transform attackCheck;
-    public float attackCheckRadius;
 
     [Header("Animator")]
-    [SerializeField] private Animator anim;
     [SerializeField] private float attackCooldown;
 
     [Header("Movement")]
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private float speed;
     [SerializeField] private float turnSpeed;
+    public float dashSpeed;
+    public float dashDuration;
 
-    [Header("Damage")]
-    [SerializeField] private int damage;
+    /*[Header("Damage")]
+    [SerializeField] private int damage;*/
 
-    // Start is called before the first frame update
-    void Start()
+
+    public PlayerStateMachine stateMachine { get; private set; }
+
+    public PlayerIdleState IdleState { get; private set; }
+    public PlayerMoveState MoveState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
+    public PlayerAttackState AttackState { get; private set; }
+
+    protected override void Awake()
     {
-        inputManager = InputManager.Instance;
-        CurrentHealth = MaxHealth;
+        base.Awake();
+        stateMachine = new PlayerStateMachine();
+
+        IdleState = new PlayerIdleState(this, stateMachine, "Idle");
+        MoveState = new PlayerMoveState(this, stateMachine, "Move");
+        DashState = new PlayerDashState(this, stateMachine, "Dash");
+        AttackState = new PlayerAttackState(this, stateMachine, "Attack");
+
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    protected override void Start()
     {
-        attackCooldownTimer -= Time.deltaTime;
+        base.Start();
+        InputManager = InputManager.Instance;
 
-        if (inputManager.Attack() && !isAttacking && attackCooldownTimer < 0)
-        {
-            AttackAnimationTrigger();
-        }
+        stateMachine.Initialize(IdleState);
+    }
 
-        input = new Vector3(inputManager.Movement().normalized.x, 0, inputManager.Movement().normalized.y);
-        Look();
+    protected override void Update()
+    {
+        if (Time.timeScale == 0)
+            return;
 
-        #region Damagetest input
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(1); //added for the prototype and testing
-        }
-        #endregion
+        base.Update();
+
+        stateMachine.CurrentState.Update();
+        CheckForDashInput();
+        
     }
 
     private void FixedUpdate()
     {
-        Movement();
+        //Movement();
     }
 
-    public void TakeDamage(int damage)
+    public void AnimationTrigger() => stateMachine.CurrentState.AnimationFinishTrigger();
+
+    private void CheckForDashInput()
     {
-        if (isInvincible)
-            return;
 
-        CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+        if (InputManager.Dash())
+        {
+            stateMachine.ChangeState(DashState);
+        }
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
         HUDManager.Instance.UpdateHealthBar();
-
-        if (CurrentHealth == 0)
+        if (CurrentHP == 0)
             GameManager.Instance.EndGame("You Lost!, Play Again?");
     }
 
-
-    private void Look()
+    public void Look()
     {
-        if (input == Vector3.zero)
+        if (Input == Vector3.zero)
             return;
 
-        Quaternion rotation = Quaternion.LookRotation(input.AdjustToIsometricPlane(), Vector3.up);
+        Quaternion rotation = Quaternion.LookRotation(Input.AdjustToIsometricPlane(), Vector3.up);
 
         /**
          * comment this: transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
@@ -97,60 +104,9 @@ public class Player : MonoBehaviour
 
     }
 
-    private void Movement()
+    public void Movement()
     {
-        rb.MovePosition(transform.position + (transform.forward * input.normalized.magnitude) * speed * Time.deltaTime);
-    }
-
-    private void Attack() //animation trigger event
-    {
-        Collider[] colliders = Physics.OverlapSphere(attackCheck.position, attackCheckRadius);
-        GenericDoor animator;
-        Torches torch;
-        Entity enemy;
-
-        foreach (var hit in colliders)
-        {
-            Debug.Log(hit.gameObject);
-
-            if ((animator = hit.GetComponent<GenericDoor>()) != null)
-            {
-                animator.OpenDoor();
-            }
-
-            if ((torch = hit.GetComponent<Torches>()) != null)
-            {
-                torch.AddValueToDoorParent();
-            }
-            if ((enemy = hit.GetComponent<Entity>()) != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-        }
-    }
-
-    public void AttackAnimationTrigger()
-    {
-
-
-        attackCooldownTimer = attackCooldown;
-        ToggleCanAttack();
-        anim.SetBool("IsAttacking", isAttacking);
-    }
-
-    private void ToggleCanAttack() // used as an animation trigger event
-    {
-        isAttacking = !isAttacking;
-    }
-
-    private void ToggleIsInvincible()
-    {
-        isInvincible = !isInvincible;
-        Dash = !Dash;
-    }
-
-    protected virtual void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
+        rb.MovePosition(transform.position + (transform.forward * Input.normalized.magnitude) * Speed * Time.fixedDeltaTime);
+        //rb.velocity = transform.position + (transform.forward * Input.normalized.magnitude) * Speed * Time.deltaTime;
     }
 }

@@ -17,6 +17,7 @@ public class Entity : MonoBehaviour
 
     public int Damage { get { return damage; } }
     public int CurrentHP { get { return currentHP; } }
+    public int MaxHealth { get { return maxHealth; } }
 
     public int Speed { get { return speed; } }
 
@@ -40,7 +41,7 @@ public class Entity : MonoBehaviour
         currentHP = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHP = Mathf.Clamp(currentHP - damage, 0, maxHealth);
 

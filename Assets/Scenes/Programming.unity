@@ -861,6 +861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8492375669645963997, guid: b49c8d3c3cfd0de46a21206976fddf86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1257,15 +1262,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e65624e2248944c9bcdfa98e6dd721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
   attackCheck: {fileID: 1304380561}
   attackCheckRadius: 0
-  anim: {fileID: 878742027}
-  attackCooldown: 0.1
-  rb: {fileID: 878742028}
-  speed: 5
-  turnSpeed: 360
+  maxHealth: 5
+  speed: 0
   damage: 3
+  attackCooldown: 0.1
+  turnSpeed: 360
+  dashSpeed: 0
+  dashDuration: 0
 --- !u!54 &574836756
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1786,18 +1791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e65624e2248944c9bcdfa98e6dd721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &878742027 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4373181515262749774, guid: 11ef997f78a32e14887337b9b8eddcf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 9075614857270051316}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &878742028 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4695683045154252660, guid: 11ef997f78a32e14887337b9b8eddcf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 9075614857270051316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &882635436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2197320763175020486, guid: b49c8d3c3cfd0de46a21206976fddf86,
@@ -3220,6 +3213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8492375669645963997, guid: b49c8d3c3cfd0de46a21206976fddf86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3558,6 +3556,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8492375669645963997, guid: b49c8d3c3cfd0de46a21206976fddf86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3706,23 +3709,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
-        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2799997
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
         type: 3}
@@ -3732,7 +3720,7 @@ PrefabInstance:
     - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.625
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
         type: 3}
@@ -3774,11 +3762,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TankEnemyPrototype
       objectReference: {fileID: 0}
-    - target: {fileID: 3764271184659270231, guid: 150226c5ab7139f439f501d72827b87d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3808,26 +3791,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpellcasterEnemyPrototype
-      objectReference: {fileID: 0}
-    - target: {fileID: 2371596641064321546, guid: 6ec1255e3c92a3443a1f7a5f21aaf8dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338385681609576632, guid: 6ec1255e3c92a3443a1f7a5f21aaf8dc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338385681609576632, guid: 6ec1255e3c92a3443a1f7a5f21aaf8dc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7338385681609576632, guid: 6ec1255e3c92a3443a1f7a5f21aaf8dc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7338385681609576632, guid: 6ec1255e3c92a3443a1f7a5f21aaf8dc,
         type: 3}
@@ -3896,26 +3859,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MeleeEnemyPrototype
-      objectReference: {fileID: 0}
-    - target: {fileID: 2637400094163628601, guid: c1bdce489011dc643bc3f4c7f943c09c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
         type: 3}
@@ -4190,6 +4133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8492375669645963997, guid: b49c8d3c3cfd0de46a21206976fddf86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4257,11 +4205,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2700118644277550241, guid: 11ef997f78a32e14887337b9b8eddcf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

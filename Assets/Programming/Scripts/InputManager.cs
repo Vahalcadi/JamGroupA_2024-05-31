@@ -27,6 +27,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Attack.triggered;
     }
 
+    public bool Dash()
+    {
+        return playerControls.Player.Dash.triggered;
+    }
+
     public void OnEnable()
     {
         playerControls.Enable();
