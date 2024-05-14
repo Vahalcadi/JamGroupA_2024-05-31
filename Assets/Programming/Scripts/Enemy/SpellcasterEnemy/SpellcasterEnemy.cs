@@ -1,8 +1,13 @@
+using UnityEngine;
+
 public class SpellcasterEnemy : Enemy
 {
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform projectileSpawnPosition;
     public SpellcasterEnemyIdleState IdleState { get; private set; }
     public SpellcasterEnemyBattleState BattleState { get; private set; }
     public SpellcasterEnemyAttackState AttackState { get; private set; }
+
 
     protected override void Awake()
     {
@@ -23,10 +28,9 @@ public class SpellcasterEnemy : Enemy
 
     public override void AnimationAttackTrigger()
     {
-        //base.AnimationAttackTrigger();
+        base.AnimationAttackTrigger();
 
-        //spawn a projectile
-        //damage logic should be inside the projectile.
-        //damage should be done when projectile collides with player
+        var projectile = Instantiate(projectilePrefab, projectileSpawnPosition.position, projectileSpawnPosition.rotation);
+        projectile.GetComponent<Projectile>().Damage = Damage;
     }
 }

@@ -34,6 +34,8 @@ public class SpellcasterEnemyBattleState : EnemyState
 
         }*/
 
+        enemy.transform.LookAt(player);
+
         if (CanAttack())
             stateMachine.ChangeState(enemy.AttackState);
     }
