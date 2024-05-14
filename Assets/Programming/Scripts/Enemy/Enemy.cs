@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -9,7 +7,7 @@ public class Enemy : Entity
     [Header("Stunned info")]
     public float stunCooldown = 1;
     protected float stunCooldownTimer;
-    
+
 
     [Header("Attack info")]
     public float attackCooldown;

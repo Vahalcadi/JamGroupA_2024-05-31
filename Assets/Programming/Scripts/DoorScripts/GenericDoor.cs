@@ -20,8 +20,19 @@ public class GenericDoor : MonoBehaviour
         anim.SetBool("isOpen", isOpen);
     }
 
+    public void CloseDoor()
+    {
+        isOpen = false;
+        anim.SetBool("isOpen", isOpen);
+    }
+
     public virtual void ToggleIsInteractable()
     {
         isInteractable = !isInteractable;
+    }
+
+    public void SetIsInteractable(bool isInteractable)
+    {
+        this.isInteractable = isInteractable;
     }
 }
