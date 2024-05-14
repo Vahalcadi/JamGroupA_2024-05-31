@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     private InputManager inputManager;
     private bool isAttacking;
     private float attackCooldownTimer;
+    private bool isInvincible;
+    private bool Move;
+    private bool Dash;
 
     [Header("Player Health")]
     [SerializeField] private int maxHealth; //added for the prototype
@@ -64,6 +67,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isInvincible)
+            return;
+
         CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
         HUDManager.Instance.UpdateHealthBar();
 
@@ -125,6 +131,8 @@ public class Player : MonoBehaviour
 
     public void AttackAnimationTrigger()
     {
+
+
         attackCooldownTimer = attackCooldown;
         ToggleCanAttack();
         anim.SetBool("IsAttacking", isAttacking);
@@ -133,6 +141,12 @@ public class Player : MonoBehaviour
     private void ToggleCanAttack() // used as an animation trigger event
     {
         isAttacking = !isAttacking;
+    }
+
+    private void ToggleIsInvincible()
+    {
+        isInvincible = !isInvincible;
+        Dash = !Dash;
     }
 
     protected virtual void OnDrawGizmos()
