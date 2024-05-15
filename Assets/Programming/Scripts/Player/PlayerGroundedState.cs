@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerGroundedState : PlayerState
@@ -24,7 +22,14 @@ public class PlayerGroundedState : PlayerState
         base.Update();
 
         if (player.InputManager.Attack())
+        {
+            var mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Physics.Raycast(mousePos, out var hitInfo);
+            player.transform.LookAt(new Vector3(hitInfo.point.x, 1, hitInfo.point.z), Vector3.up);
+            player.transform.rotation = Quaternion.Euler(0, player.transform.eulerAngles.y, 0);
+
             stateMachine.ChangeState(player.AttackState);
+        }
     }
 
     public override void FixedUpdate()
