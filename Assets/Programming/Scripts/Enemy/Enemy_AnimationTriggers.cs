@@ -26,6 +26,9 @@ public class Enemy_AnimationTriggers : MonoBehaviour
 
             if ((player = hit.GetComponent<Player>()) != null)
             {
+                if (player.IsInvincible)
+                    return;
+
                 Debug.Log("Damage Player");
                 Debug.Log(enemy.Damage);
                 player.TakeDamage(enemy.Damage);
