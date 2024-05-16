@@ -14,7 +14,10 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().TakeDamage(Damage);
+            Player player = other.GetComponent<Player>();
+
+            if(!player.IsInvincible)
+                player.TakeDamage(Damage);
         }
     }
 }
