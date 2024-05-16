@@ -24,6 +24,7 @@ public class PlayerState
     public virtual void Enter()
     {
         player.anim.SetBool(animBoolName, true);
+        player.weaponAnim.SetBool(animBoolName, true);
         rb = player.rb;
         triggerCalled = false;
     }
@@ -37,6 +38,7 @@ public class PlayerState
     public virtual void Exit()
     {
         player.anim.SetBool(animBoolName, false);
+        player.weaponAnim.SetBool(animBoolName, false);
     }
 
     public virtual void FixedUpdate()

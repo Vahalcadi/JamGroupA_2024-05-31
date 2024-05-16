@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDashState : PlayerState
 {
     float inputMagnitude;
+    Quaternion rotation;
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
 
@@ -14,6 +15,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
+        rotation = Quaternion.LookRotation(player.Input.AdjustToIsometricPlane(), Vector3.up);
         inputMagnitude = player.Input.normalized.magnitude;
         stateTimer = player.dashDuration;
 
@@ -30,11 +32,18 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         base.Update();
+        
 
-        if(inputMagnitude == 0)
+        if (inputMagnitude == 0)
+        {
             rb.velocity = player.transform.forward * player.dashSpeed;
+        }
         else
+        {          
             rb.velocity = player.transform.forward * inputMagnitude * player.dashSpeed;
+        }
+
+        player.transform.rotation = rotation;
 
         if (stateTimer < 0)
             stateMachine.ChangeState(player.IdleState);

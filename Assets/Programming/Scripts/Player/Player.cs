@@ -9,12 +9,15 @@ public class Player : Entity
     private float attackCooldownTimer;
 
     [Header("Animator")]
+    public Animator weaponAnim;
     [SerializeField] private float attackCooldown;
 
     [Header("Movement")]
     [SerializeField] private float turnSpeed;
     public float dashSpeed;
     public float dashDuration;
+    public float dashCooldown;
+    private float dashCooldownTimer;
 
     /*[Header("Damage")]
     [SerializeField] private int damage;*/
@@ -55,6 +58,8 @@ public class Player : Entity
 
         base.Update();
 
+        dashCooldownTimer -= Time.deltaTime;
+
         stateMachine.CurrentState.Update();
         CheckForDashInput();
         
@@ -70,8 +75,9 @@ public class Player : Entity
     private void CheckForDashInput()
     {
 
-        if (InputManager.Dash())
+        if (InputManager.Dash() && dashCooldownTimer < 0)
         {
+            dashCooldownTimer = dashCooldown;
             stateMachine.ChangeState(DashState);
         }
     }
