@@ -104,8 +104,8 @@ public class Player : Entity
          * **/
 
         /*THIS BELOW*/
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
-        //transform.rotation = rotation;
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
+        transform.rotation = rotation;
 
     }
 
