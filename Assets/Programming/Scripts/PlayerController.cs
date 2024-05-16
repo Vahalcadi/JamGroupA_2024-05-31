@@ -125,7 +125,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b194c23f-928f-43a7-9694-8bf2a08af045"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

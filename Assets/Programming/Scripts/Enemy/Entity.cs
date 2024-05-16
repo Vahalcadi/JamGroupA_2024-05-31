@@ -39,6 +39,8 @@ public class Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         currentHP = maxHealth;
+
+        IsDead = false;
     }
 
     public virtual void TakeDamage(int damage)
@@ -46,7 +48,7 @@ public class Entity : MonoBehaviour
         currentHP = Mathf.Clamp(currentHP - damage, 0, maxHealth);
 
         if (currentHP == 0)
-            Destroy(this.gameObject);
+            Die();
     }
 
     public void MakeInvincible(bool _invincible) => IsInvincible = _invincible;
@@ -73,7 +75,8 @@ public class Entity : MonoBehaviour
 
     public virtual void Die()
     {
-
+        IsDead = true;
+        gameObject.SetActive(false);
     }
 
     protected virtual void OnDrawGizmos()
