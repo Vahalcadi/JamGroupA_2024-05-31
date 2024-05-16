@@ -89,17 +89,20 @@ public class GameMenu : MonoBehaviour
 
     public void Restart()
     {
-        QuestionDialogUI.Instance.ShowQuestion("You will lose ALL YOUR PROGRESS, are you sure?",
-            () =>
-            {
-                Time.timeScale = 1.0f;
-                //restartGameUI.SetActive(false);
-                SceneManager.LoadScene(currentSceneName);
-            },
-            () =>
-            {
-                SwitchWithKeyTo(inGameUI);
-            });
+        //QuestionDialogUI.Instance.ShowQuestion("You will lose ALL YOUR PROGRESS, are you sure?",
+        //    () =>
+        //    {
+        //        Time.timeScale = 1.0f;
+        //        //restartGameUI.SetActive(false);
+        //        SceneManager.LoadScene(currentSceneName);
+        //    },
+        //    () =>
+        //    {
+        //        SwitchWithKeyTo(inGameUI);
+        //    });
+
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(currentSceneName);
 
         // Debug.Log("To Main Menu (implementing)");
     }
