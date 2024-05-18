@@ -43,7 +43,6 @@ public class PlayerDashState : PlayerState
             rb.velocity = player.transform.forward * inputMagnitude * player.dashSpeed;
         }
 
-        player.transform.rotation = rotation;
 
         if (stateTimer < 0)
             stateMachine.ChangeState(player.IdleState);
