@@ -15,17 +15,24 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
+        if (stateTimer > 0)
+            return;
+
         rotation = Quaternion.LookRotation(player.Input.AdjustToIsometricPlane(), Vector3.up);
         inputMagnitude = player.Input.normalized.magnitude;
+
+        player.dashUses--;
         stateTimer = player.dashDuration;
+
 
         player.MakeInvincible(true);
     }
 
     public override void Exit()
     {
-        base.Exit();
+        
 
+        base.Exit();
         player.MakeInvincible(false);
     }
 

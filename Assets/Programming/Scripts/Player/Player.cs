@@ -1,3 +1,4 @@
+using System;
 using System.Xml;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
@@ -14,10 +15,12 @@ public class Player : Entity
 
     [Header("Movement")]
     [SerializeField] private float turnSpeed;
+    [SerializeField] private int maxDashUses;
+    public int dashUses;
     public float dashSpeed;
     public float dashDuration;
     public float dashCooldown;
-    private float dashCooldownTimer;
+    [NonSerialized] public float dashCooldownTimer;
 
     /*[Header("Damage")]
     [SerializeField] private int damage;*/
@@ -49,6 +52,7 @@ public class Player : Entity
         InputManager = InputManager.Instance;
 
         stateMachine.Initialize(IdleState);
+        dashUses = maxDashUses;
     }
 
     protected override void Update()
@@ -59,6 +63,12 @@ public class Player : Entity
         base.Update();
 
         dashCooldownTimer -= Time.deltaTime;
+
+        if (dashUses == 0)
+        {
+            dashUses = maxDashUses;
+            dashCooldownTimer = dashCooldown;
+        }
 
         stateMachine.CurrentState.Update();
         CheckForDashInput();
@@ -77,8 +87,10 @@ public class Player : Entity
 
         if (InputManager.Dash() && dashCooldownTimer < 0)
         {
-            dashCooldownTimer = dashCooldown;
-            stateMachine.ChangeState(DashState);
+            if(dashUses > 0)
+            {               
+                stateMachine.ChangeState(DashState);
+            }
         }
     }
 
