@@ -114,7 +114,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""701d90d1-6e0b-4858-91a6-f7e4e08c122d"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -125,7 +125,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b194c23f-928f-43a7-9694-8bf2a08af045"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
