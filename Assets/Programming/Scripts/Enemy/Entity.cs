@@ -67,6 +67,8 @@ public class Entity : MonoBehaviour
 
         var rotateAmount = Vector3.Cross(direction.normalized, transform.forward);
 
+        rotateAmount = new Vector3(0, rotateAmount.y, 0);
+
         rb.angularVelocity = -rotateAmount * 10;
 
         rb.velocity = transform.forward * speed;

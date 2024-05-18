@@ -36,6 +36,8 @@ public class SpellcasterEnemyBattleState : EnemyState
 
         enemy.transform.LookAt(player);
 
+        enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.eulerAngles.y, 0);
+
         if (CanAttack())
             stateMachine.ChangeState(enemy.AttackState);
     }
