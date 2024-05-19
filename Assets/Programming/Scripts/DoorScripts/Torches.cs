@@ -6,6 +6,8 @@ public class Torches : MonoBehaviour
 {
     [SerializeField] private int combinationValue;
     private bool isInteractable = true;
+    [SerializeField] private GameObject TorchLight;
+    [SerializeField] private GameObject TorchVFX;
 
     DoorWithTorches DoorWithTorches;
 
@@ -20,7 +22,8 @@ public class Torches : MonoBehaviour
         {      
             isInteractable = false;
             Debug.LogWarning(combinationValue);
-
+            TorchLight.SetActive(true);
+            TorchVFX.SetActive(true);
             DoorWithTorches.AddValueToPlayerCombination(combinationValue);
         }
     }
@@ -28,5 +31,7 @@ public class Torches : MonoBehaviour
     public void ResetTorch()
     {
         isInteractable = true;
+        TorchLight.SetActive(false);
+        TorchVFX.SetActive(false);
     }
 }
