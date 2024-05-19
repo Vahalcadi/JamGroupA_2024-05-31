@@ -5530,6 +5530,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeEnemyPrototype
       objectReference: {fileID: 0}
+    - target: {fileID: 2637400094163628601, guid: c1bdce489011dc643bc3f4c7f943c09c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9156,6 +9161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MeleeEnemyPrototype (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637400094163628601, guid: c1bdce489011dc643bc3f4c7f943c09c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
         type: 3}
@@ -16175,7 +16185,37 @@ PrefabInstance:
     - target: {fileID: 3764271184659270231, guid: 150226c5ab7139f439f501d72827b87d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273605152001952642, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587630958105986584, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587630958105986584, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: jumpDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587630958105986584, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: jumpAcceleration
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587630958105986584, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: attackCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587630958105986584, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: obstructionMask.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17325,6 +17365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MeleeEnemyPrototype (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637400094163628601, guid: c1bdce489011dc643bc3f4c7f943c09c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985275182415329475, guid: c1bdce489011dc643bc3f4c7f943c09c,
         type: 3}
