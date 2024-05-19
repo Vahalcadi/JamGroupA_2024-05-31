@@ -17,6 +17,8 @@ public class TankEnemyBattleState : EnemyState
         player = PlayerManager.Instance.Player.transform;
 
         enemy.transform.LookAt(player.transform);
+
+        enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.eulerAngles.y, 0);
         /*if (player.GetComponent<Player>().isDead)
             stateMachine.ChangeState(enemy.moveState);*/
 
