@@ -33,6 +33,7 @@ public class Enemy_AnimationTriggers : MonoBehaviour
                 Debug.Log(enemy.Damage);
                 player.TakeDamage(enemy.Damage);
             }
+            
         }
     }
 }

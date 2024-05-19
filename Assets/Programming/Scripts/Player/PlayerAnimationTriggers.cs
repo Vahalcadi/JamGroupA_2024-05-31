@@ -20,12 +20,13 @@ public class PlayerAnimationTriggers : MonoBehaviour
         foreach (var hit in colliders)
         {
             Debug.Log(hit.gameObject);
+            if (hit.CompareTag("Bullet"))
+                Destroy(hit.gameObject);
 
             if ((animator = hit.GetComponent<GenericDoor>()) != null)
             {
                 animator.OpenDoor();
             }
-
             if ((torch = hit.GetComponent<Torches>()) != null)
             {
                 torch.AddValueToDoorParent();

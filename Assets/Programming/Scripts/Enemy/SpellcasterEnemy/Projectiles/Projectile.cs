@@ -19,5 +19,7 @@ public class Projectile : MonoBehaviour
             if(!player.IsInvincible)
                 player.TakeDamage(Damage);
         }
+        if (!other.CompareTag("Enemy"))
+            Destroy(gameObject);
     }
 }
