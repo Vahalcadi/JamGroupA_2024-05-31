@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1004502013462249829
 Transform:
   m_ObjectHideFlags: 0
@@ -340,12 +340,12 @@ MonoBehaviour:
   attackCheck: {fileID: 8273605152001952642}
   attackCheckRadius: 1.5
   maxHealth: 5
-  speed: 5
+  speed: 20
   damage: 3
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  stunCooldown: 1
+  stunCooldown: 0.5
   attackCooldown: 0
   attackDistance: 2
   minAttackCooldown: 0
