@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2975476840556352150}
   - component: {fileID: 8235327571556202807}
   - component: {fileID: 6813744968443950679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1450628340151072248}
   - component: {fileID: 5807973492817080505}
   - component: {fileID: 3553806909339448617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,6 +354,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 64
+  jumpDuration: 0
+  jumpAcceleration: 0
 --- !u!1 &7530567443539374694
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +369,7 @@ GameObject:
   - component: {fileID: 3451762453419892254}
   - component: {fileID: 3690488888519707277}
   - component: {fileID: 6355439463038293234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +489,7 @@ GameObject:
   - component: {fileID: 7697781682568248402}
   - component: {fileID: 1274695863773946912}
   - component: {fileID: 2766365895705603090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
