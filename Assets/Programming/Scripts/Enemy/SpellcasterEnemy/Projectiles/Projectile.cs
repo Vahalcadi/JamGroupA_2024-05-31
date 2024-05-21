@@ -27,7 +27,15 @@ public class Projectile : MonoBehaviour
             Player player = other.GetComponent<Player>();
 
             if (!player.IsInvincible)
+            {
                 player.TakeDamage(Damage);
+                Destroy(gameObject);
+            } 
+        }
+
+        if (other.gameObject.layer == 6 || other.gameObject.layer == 8)
+        {
+            Destroy(gameObject);
         }
     }
 }
