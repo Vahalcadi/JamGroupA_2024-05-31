@@ -99,7 +99,7 @@ public class Player : Entity
         base.TakeDamage(damage);
         HUDManager.Instance.UpdateHealthBar();
         if (CurrentHP == 0)
-            GameManager.Instance.EndGame("You Lost!, Play Again?");
+            GameManager.Instance.EndGame("You Lost!, Play Again? agagagag");
     }
 
     public void Look()
