@@ -11,10 +11,17 @@ public class RoomWithEnemies : MonoBehaviour
 
     bool allEnemiesDied;
 
+    bool activated;
+
     private void OnTriggerEnter(Collider other)
     {
+        if (activated)
+            return;
+
         if (other.CompareTag("Player"))
         {
+            activated = true;
+
             if (allEnemiesDied)
                 return;
 
