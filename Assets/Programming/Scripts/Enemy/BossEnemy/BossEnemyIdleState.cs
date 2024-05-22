@@ -32,8 +32,7 @@ public class BossEnemyIdleState : EnemyState
     {
         base.Update();
 
-        if (Vector3.Distance(player.transform.position, enemy.transform.position) < 7)
-            enemy.bossFightBegun = true;
+        enemy.bossFightBegun = true;
 
         //if (Input.GetKeyDown(KeyCode.V))
         //    stateMachine.ChangeState(enemy.teleportState);

@@ -26,8 +26,8 @@ public class BossEnemyTeleportState : EnemyState
         {
             /*if (enemy.CanDoSpellCast())
                 stateMachine.ChangeState(enemy.spellCastState);
-            else
-                stateMachine.ChangeState(enemy.battleState);*/
+            else*/
+            stateMachine.ChangeState(enemy.BattleState);
         }
     }
 
