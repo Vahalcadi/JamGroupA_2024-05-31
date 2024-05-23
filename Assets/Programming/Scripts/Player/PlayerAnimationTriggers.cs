@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerAnimationTriggers : MonoBehaviour
 {
+    [SerializeField] private VisualEffect weaponAttack;
     private Player player => GetComponentInParent<Player>();
+
+    private void PlayVFX()
+    {
+        weaponAttack.Play();
+    }
 
     private void AnimationTrigger()
     {
