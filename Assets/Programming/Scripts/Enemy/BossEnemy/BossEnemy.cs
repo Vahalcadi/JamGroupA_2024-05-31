@@ -5,6 +5,11 @@ public class BossEnemy : Enemy
 {
     public BoxCollider cd;
     public LayerMask whatIsGround;
+    public GameObject projectile;
+    public Transform projectileSpawner;
+    public float shootCooldown;
+    public float lastTimeShoot;
+    public int projectileDamage;
 
     [Header("Teleport details")]
     [SerializeField] private BoxCollider arena;
@@ -19,7 +24,7 @@ public class BossEnemy : Enemy
     public BossEnemyBattleState BattleState { get; private set; }
     public BossEnemyAttackState AttackState { get; private set; }
     //public DeathBringerDeadState deadState { get; private set; }
-    //public DeathBringerSpellCastState spellCastState { get; private set; }
+    public BossEnemyShootState ShootState { get; private set; }
     public BossEnemyTeleportState TeleportState { get; private set; }
 
     protected override void Awake()
@@ -29,7 +34,7 @@ public class BossEnemy : Enemy
         IdleState = new BossEnemyIdleState(this, stateMachine, "Idle", this);
         BattleState = new BossEnemyBattleState(this, stateMachine, "Move", this);
         AttackState = new BossEnemyAttackState(this, stateMachine, "Attack", this);
-        //spellCastState = new DeathBringerSpellCastState(this, stateMachine, "Cast", this);
+        ShootState = new BossEnemyShootState(this, stateMachine, "Shoot", this);
         TeleportState = new BossEnemyTeleportState(this, stateMachine, "Teleport", this);
     }
 
@@ -49,22 +54,11 @@ public class BossEnemy : Enemy
     }
 
 
-    /*public void CastSpell()
+    public void FireProjectiles()
     {
-        Player player = PlayerManager.Instance.Player;
-
-        float xOffset = 0;
-
-        if (player.rb.velocity.x != 0)
-            xOffset = player.facingDir * 3;
-
-
-        Vector3 spellPosition = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + 1.5f);
-
-        GameObject newSpell = Instantiate(spellPrefab, spellPosition, Quaternion.identity);
-        newSpell.GetComponent<DeathBringerSpell_Controller>().SetupSpell(stats);
-
-    }*/
+        GameObject projectile = Instantiate(this.projectile, projectileSpawner.position, projectileSpawner.rotation);
+        projectile.GetComponent<Projectile>().Damage = projectileDamage;
+    }
 
     public void FindPosition()
     {
@@ -104,16 +98,15 @@ public class BossEnemy : Enemy
         return false;
     }
 
-    /*public bool CanDoSpellCast()
+    public bool CanShoot()
     {
-        if (Time.time >= lastTimeCast + spellStateCooldown)
+        if (Time.time >= lastTimeShoot + shootCooldown)
         {
-
             return true;
         }
 
         return false;
-    }*/
+    }
 
     public override void AnimationAttackTrigger()
     {
