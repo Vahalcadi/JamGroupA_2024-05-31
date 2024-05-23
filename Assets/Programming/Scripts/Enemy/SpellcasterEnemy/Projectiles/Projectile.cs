@@ -27,7 +27,10 @@ public class Projectile : MonoBehaviour
             Player player = other.GetComponent<Player>();
 
             if (!player.IsInvincible)
+            {
                 player.TakeDamage(Damage);
+                Destroy(gameObject);
+            }
         }
     }
 }
