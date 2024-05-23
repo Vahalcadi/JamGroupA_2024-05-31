@@ -1,6 +1,4 @@
 using System;
-using System.Xml;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Player : Entity
@@ -40,7 +38,7 @@ public class Player : Entity
 
         IdleState = new PlayerIdleState(this, stateMachine, "Idle");
         MoveState = new PlayerMoveState(this, stateMachine, "Move");
-        DashState = new PlayerDashState(this, stateMachine, "Dash");
+        DashState = new PlayerDashState(this, stateMachine, "Idle");
         AttackState = new PlayerAttackState(this, stateMachine, "Attack");
 
     }
@@ -72,7 +70,7 @@ public class Player : Entity
 
         stateMachine.CurrentState.Update();
         CheckForDashInput();
-        
+
     }
 
     private void FixedUpdate()
@@ -87,8 +85,8 @@ public class Player : Entity
 
         if (InputManager.Dash() && dashCooldownTimer < 0)
         {
-            if(dashUses > 0)
-            {               
+            if (dashUses > 0)
+            {
                 stateMachine.ChangeState(DashState);
             }
         }
