@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class PlayerIdleState : PlayerGroundedState
 {
@@ -26,8 +23,8 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Update();
 
-        if(player.Input != Vector3.zero)
-        stateMachine.ChangeState(player.MoveState);
+        if (player.Input != Vector3.zero)
+            stateMachine.ChangeState(player.MoveState);
     }
 
     public override void FixedUpdate()
