@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossEnemyTeleportState : EnemyState
@@ -21,13 +19,14 @@ public class BossEnemyTeleportState : EnemyState
     public override void Update()
     {
         base.Update();
+        enemy.shootStateCooldownTimer -= Time.deltaTime;
 
         if (triggerCalled)
         {
-            if (enemy.CanShoot())
+            if (enemy.shootStateCooldownTimer < 0)
                 stateMachine.ChangeState(enemy.ShootState);
             else
-            stateMachine.ChangeState(enemy.BattleState);
+                stateMachine.ChangeState(enemy.BattleState);
         }
     }
 

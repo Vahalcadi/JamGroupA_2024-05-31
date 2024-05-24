@@ -8,8 +8,10 @@ public class BossEnemy : Enemy
     public GameObject projectile;
     public Transform projectileSpawner;
     public float shootCooldown;
-    public float lastTimeShoot;
+    [HideInInspector] public float lastTimeShoot;
     public int projectileDamage;
+    public float shootStateCooldown;
+    [HideInInspector] public float shootStateCooldownTimer;
 
     [Header("Teleport details")]
     [SerializeField] private BoxCollider arena;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossEnemyShootState : EnemyState
@@ -34,12 +32,15 @@ public class BossEnemyShootState : EnemyState
         shootTimer -= Time.deltaTime;
         shootStateTimer -= Time.deltaTime;
 
-        if(CanCast())
+        if (CanShoot())
             enemy.FireProjectiles();
 
 
         if (shootStateTimer <= 0)
+        {
+            enemy.shootStateCooldownTimer = enemy.shootStateCooldown;
             stateMachine.ChangeState(enemy.TeleportState);
+        }
     }
 
     public override void Exit()
@@ -49,7 +50,7 @@ public class BossEnemyShootState : EnemyState
         enemy.lastTimeShoot = Time.time;
     }
 
-    private bool CanCast()
+    private bool CanShoot()
     {
         if (shootTimer < 0)
         {
