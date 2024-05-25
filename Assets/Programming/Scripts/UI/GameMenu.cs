@@ -126,6 +126,7 @@ public class GameMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
+    
 }
