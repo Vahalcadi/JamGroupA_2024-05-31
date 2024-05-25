@@ -6,11 +6,13 @@ using UnityEngine.VFX;
 public class PlayerAnimationTriggers : MonoBehaviour
 {
     [SerializeField] private VisualEffect weaponAttack;
+    [SerializeField] private ParticleSystem weaponTrails;
     private Player player => GetComponentInParent<Player>();
 
     private void PlayVFX()
     {
         weaponAttack.Play();
+        weaponTrails.Play();
     }
 
     private void AnimationTrigger()
