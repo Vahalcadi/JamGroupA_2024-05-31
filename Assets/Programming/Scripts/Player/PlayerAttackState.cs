@@ -34,7 +34,8 @@ public class PlayerAttackState : PlayerState
             /*Physics.Raycast(mousePos, out var hitInfo);
             player.transform.LookAt(new Vector3(hitInfo.point.x, 1, hitInfo.point.z), Vector3.up);
             player.transform.rotation = Quaternion.Euler(0, player.transform.eulerAngles.y, 0);*/
-            player.SetZeroVelocity();
+            //player.SetZeroVelocity();
+            rb.MovePosition(player.transform.position + player.transform.forward * (player.Speed /4) * Time.fixedDeltaTime);
         }
 
         if (triggerCalled)
