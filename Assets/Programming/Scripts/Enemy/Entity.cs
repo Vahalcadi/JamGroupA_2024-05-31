@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -14,6 +15,11 @@ public class Entity : MonoBehaviour
     [SerializeField] private int speed;
     [SerializeField] private int damage;
     private int currentHP;
+
+    [Header("Knockback info")]
+    [SerializeField] protected float knockbackPower;
+    [SerializeField] protected float knockbackDuration = .07f;
+    protected bool isKnocked;
 
     public int Damage { get { return damage; } }
     public int CurrentHP { get { return currentHP; } }
@@ -47,8 +53,23 @@ public class Entity : MonoBehaviour
     {
         currentHP = Mathf.Clamp(currentHP - damage, 0, maxHealth);
 
+        StartCoroutine(HitKnockback());
+
         if (currentHP == 0)
             Die();
+    }
+
+    public IEnumerator HitKnockback()
+    {
+        isKnocked = true;
+
+        //rb.velocity = -transform.forward * knockbackPower;
+
+        rb.AddForce(-transform.forward * knockbackPower, ForceMode.VelocityChange);
+
+        yield return new WaitForSeconds(knockbackDuration);
+
+        isKnocked = false;
     }
 
     public void MakeInvincible(bool _invincible) => IsInvincible = _invincible;
