@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 247522717515623668}
   - component: {fileID: 2784150437910485574}
   - component: {fileID: 321117782453712541}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Projectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -150,6 +150,9 @@ MonoBehaviour:
   rb: {fileID: 2784150437910485574}
   speed: 10
   despawnTime: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1183027328151135940
 GameObject:
   m_ObjectHideFlags: 0
