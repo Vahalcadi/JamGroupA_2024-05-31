@@ -8,6 +8,8 @@ public class TankEnemyIdleState : TankEnemyGroundedState
     {
         base.Enter();
         //Debug.Log("2. IdleState");
+        stateTimer = enemy.idleTime;
+
     }
 
     public override void Exit()
@@ -19,9 +21,7 @@ public class TankEnemyIdleState : TankEnemyGroundedState
     {
         base.Update();
 
-        /*if (stateTimer < 0)
-        {
-            stateMachine.ChangeState(enemy.MoveState);
-        }*/
+        if (stateTimer < 0)
+            stateMachine.ChangeState(enemy.BattleState);
     }
 }

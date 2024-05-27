@@ -16,11 +16,8 @@ public class TankEnemyBattleState : EnemyState
 
         player = PlayerManager.Instance.Player.transform;
 
-        stateTimer = enemy.jumpDuration;
+        
 
-        enemy.transform.LookAt(player.transform);
-
-        enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.eulerAngles.y, 0);
         /*if (player.GetComponent<Player>().isDead)
             stateMachine.ChangeState(enemy.moveState);*/
 
@@ -31,40 +28,17 @@ public class TankEnemyBattleState : EnemyState
     public override void Update()
     {
         base.Update();
-
-        if (CanAttack())
+        stateTimer = enemy.battleTime;
+        if ((new Vector2(player.transform.position.x, player.transform.position.z) - new Vector2(enemy.transform.position.x, enemy.transform.position.z)).magnitude < enemy.attackDistance)
         {
-            //rb.velocity = enemy.transform.forward * enemy.Speed;
-            //Ray ray = new Ray(enemy.transform.position, enemy.transform.position - enemy.transform.up);
 
-            /*if ((player.position - enemy.transform.position).magnitude < enemy.attackDistance)
-                stateMachine.ChangeState(enemy.AttackState);
-            else if (Physics.Raycast(enemy.transform.position, enemy.transform.rotation * Vector3.forward, enemy.attackDistance, enemy.obstructionMask))
-                stateMachine.ChangeState(enemy.AttackState);*/
-            //Physics.Raycast(enemy.transform.position,enemy.transform.position - enemy.transform.up, Mathf.Infinity, LayerMask.NameToLayer("Player"))
-
-            if(stateTimer < 0 || (stateTimer < enemy.jumpDuration / 2 && Physics.Raycast(enemy.transform.position, enemy.transform.rotation * Vector3.down, Mathf.Infinity, enemy.obstructionMask))) 
-            {
-                enemy.rb.AddForce(0, -10000, 0, ForceMode.Impulse);
-                stateMachine.ChangeState(enemy.AttackState);
-            }
-            else
-            {
-                enemy.rb.AddForce(0, enemy.jumpAcceleration, 0, ForceMode.Acceleration);
-                enemy.MoveToPlayer();
-            }
-
-
-        }
-
-        /*if ((player.position - enemy.transform.position).magnitude < enemy.attackDistance)
-        {
             if (CanAttack())
                 stateMachine.ChangeState(enemy.AttackState);
 
         }
         else
-            enemy.MoveToPlayer();*/
+            enemy.MoveToPlayer();
+        
     }
 
     public override void Exit()

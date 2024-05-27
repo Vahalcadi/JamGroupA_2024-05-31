@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class TankEnemy : Enemy
 {
-    public LayerMask obstructionMask;
-    public float jumpDuration;
-    public float jumpAcceleration;
+    public float idleTime = 2;
+    public float battleTime = 7;
     public TankEnemyIdleState IdleState { get; private set; }
     public TankEnemyBattleState BattleState { get; private set; }
     public TankEnemyAttackState AttackState { get; private set; }

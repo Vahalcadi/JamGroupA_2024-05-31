@@ -27,6 +27,6 @@ public class TankEnemyAttackState : EnemyState
         enemy.SetZeroVelocity();
 
         if (triggerCalled)
-            stateMachine.ChangeState(enemy.BattleState);
+            stateMachine.ChangeState(enemy.IdleState);
     }
 }
