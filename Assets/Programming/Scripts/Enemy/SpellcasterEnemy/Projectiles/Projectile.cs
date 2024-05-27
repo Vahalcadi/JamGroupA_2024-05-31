@@ -32,5 +32,10 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (other.gameObject.layer == 6)
+        {
+            Destroy(gameObject);
+        }
     }
 }

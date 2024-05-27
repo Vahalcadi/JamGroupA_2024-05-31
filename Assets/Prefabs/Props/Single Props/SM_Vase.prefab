@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1634623658455659187}
   - component: {fileID: 3235929977919158717}
   - component: {fileID: 2270790138084420312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Litgh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5709904538524741540}
   - component: {fileID: 3174074895459562210}
   - component: {fileID: 5222744563625814374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: vfxgraph_Hostges_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,6 +296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dcb4a27d84687114b81bb63a776f1fb1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

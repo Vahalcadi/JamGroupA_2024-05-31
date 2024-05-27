@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3838227957977451307}
   - component: {fileID: 9056506706835155363}
   - component: {fileID: 6590028987729663332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Litgh (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 760435042279388132}
   - component: {fileID: 7398628079970154215}
   - component: {fileID: 7309093169527267225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: vfxgraph_Hostges_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,6 +296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Magic_Rock_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 546b634c5a38f554c9561609fe9c6698,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
