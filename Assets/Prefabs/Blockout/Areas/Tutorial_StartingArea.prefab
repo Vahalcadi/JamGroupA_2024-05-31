@@ -9136,10 +9136,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9082545909966145071}
     m_Modifications:
-    - target: {fileID: 1427527279639070299, guid: 8594b430dc079344a869bf3e1667ecfa,
+    - target: {fileID: 249060754444778142, guid: 8594b430dc079344a869bf3e1667ecfa,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      propertyPath: torches.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 249060754444778142, guid: 8594b430dc079344a869bf3e1667ecfa,
+        type: 3}
+      propertyPath: torches.Array.data[1]
+      value: 
+      objectReference: {fileID: 7038309160222048375}
+    - target: {fileID: 249060754444778142, guid: 8594b430dc079344a869bf3e1667ecfa,
+        type: 3}
+      propertyPath: combination.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 249060754444778142, guid: 8594b430dc079344a869bf3e1667ecfa,
+        type: 3}
+      propertyPath: combination.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249060754444778142, guid: 8594b430dc079344a869bf3e1667ecfa,
+        type: 3}
+      propertyPath: combination.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1511347927137155287, guid: 8594b430dc079344a869bf3e1667ecfa,
         type: 3}
@@ -9149,12 +9169,12 @@ PrefabInstance:
     - target: {fileID: 5513230209181701396, guid: 8594b430dc079344a869bf3e1667ecfa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.94
+      value: -5.28
       objectReference: {fileID: 0}
     - target: {fileID: 5513230209181701396, guid: 8594b430dc079344a869bf3e1667ecfa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.47
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 5513230209181701396, guid: 8594b430dc079344a869bf3e1667ecfa,
         type: 3}
@@ -9201,6 +9221,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8594b430dc079344a869bf3e1667ecfa, type: 3}
+--- !u!114 &7038309160222048375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4776300020363023706, guid: 8594b430dc079344a869bf3e1667ecfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2586697260138239277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b93d61cf12965849bfa2bc2327f211f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8027427596595511353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5513230209181701396, guid: 8594b430dc079344a869bf3e1667ecfa,
