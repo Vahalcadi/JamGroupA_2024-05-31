@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1242896509260748520}
+  - {fileID: 6270151421366471024}
   - {fileID: 5434251991403150527}
   - {fileID: 9073385077439531074}
   m_Father: {fileID: 0}
@@ -76,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6721cb4240b4842b0395ee48b816a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTakenEffect: {fileID: 1035295141445282773}
   attackCheck: {fileID: 5434251991403150527}
   attackCheckRadius: 0.8
   maxHealth: 3
@@ -4976,6 +4978,86 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1001 &566391503059842644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2985275182415329475}
+    m_Modifications:
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.268
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.084
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245030854402103297, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+        type: 3}
+      propertyPath: m_Name
+      value: VaporDamageEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad, type: 3}
+--- !u!198 &1035295141445282773 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 685146789785296257, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 566391503059842644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6270151421366471024 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5825467059460112164, guid: b9f9f56bc2d919943b4d5d2fdfdcc4ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 566391503059842644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7657117383992613906
 PrefabInstance:
   m_ObjectHideFlags: 0

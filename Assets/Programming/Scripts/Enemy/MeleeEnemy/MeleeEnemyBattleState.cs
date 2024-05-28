@@ -27,6 +27,9 @@ public class MeleeEnemyBattleState : EnemyState
     {
         base.Update();
 
+        if (enemy.IsDamaged)
+            stateMachine.ChangeState(enemy.DamagedState);
+
         if ((player.position - enemy.transform.position).magnitude < enemy.attackDistance)
         {
             if (CanAttack())

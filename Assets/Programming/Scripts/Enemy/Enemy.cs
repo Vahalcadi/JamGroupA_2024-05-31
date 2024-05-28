@@ -4,6 +4,11 @@ public class Enemy : Entity
 {
     [SerializeField] protected LayerMask whatIsPlayer;
 
+    public bool IsDamaged { get; set; }
+
+    [Header("VFX")]
+    public ParticleSystem damageTakenEffect;
+
     [Header("Stunned info")]
     public float stunCooldown = 1;
     protected float stunCooldownTimer;
@@ -35,6 +40,12 @@ public class Enemy : Entity
         base.Update();
         stunCooldownTimer = Time.deltaTime;
         stateMachine.CurrentState.Update();
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        IsDamaged = true;
     }
 
     public virtual void GetStunned()
