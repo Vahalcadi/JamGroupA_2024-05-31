@@ -75,7 +75,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3764271184659270231}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -117,10 +117,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stunCooldown: 0.5
-  attackCooldown: 0.44
-  attackDistance: 2
-  minAttackCooldown: 0.35
-  maxAttackCooldown: 0.55
+  attackCooldown: 0
+  attackDistance: 2.28
+  minAttackCooldown: 1
+  maxAttackCooldown: 3
   lastTimeAttacked: 0
   idleTime: 2
   battleTime: 7
@@ -143,10 +143,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.87310886
+  m_Radius: 0.7197685
   m_Height: 1.7462177
   m_Direction: 1
-  m_Center: {x: -0.0034780502, y: 0.2885399, z: 0.107622325}
+  m_Center: {x: -0.031554222, y: 0.27, z: 0.107622325}
 --- !u!1001 &7781988414650439731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
