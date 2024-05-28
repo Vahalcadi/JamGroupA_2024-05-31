@@ -28,7 +28,7 @@ public class PlayerAnimationTriggers : MonoBehaviour
 
         foreach (var hit in colliders)
         {
-            Debug.Log(hit.transform.parent);
+            Debug.Log(hit);
             if (hit.CompareTag("Bullet"))
                 Destroy(hit.gameObject);
 
