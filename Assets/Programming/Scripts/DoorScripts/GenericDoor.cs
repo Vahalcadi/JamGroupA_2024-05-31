@@ -6,9 +6,13 @@ public class GenericDoor : MonoBehaviour
     protected bool isOpen;
     protected bool isInteractable;
 
-    public virtual void Start()
+    private void Awake()
     {
         isInteractable = true;
+    }
+
+    public virtual void Start()
+    {
     }
 
     public virtual void OpenDoor()
