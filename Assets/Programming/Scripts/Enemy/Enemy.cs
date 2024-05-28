@@ -8,6 +8,7 @@ public class Enemy : Entity
 
     [Header("VFX")]
     public ParticleSystem damageTakenEffect;
+    public ParticleSystem damageTakenEffect1;
 
     [Header("Stunned info")]
     public float stunCooldown = 1;

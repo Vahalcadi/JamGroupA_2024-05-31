@@ -4159,6 +4159,18 @@ Transform:
   - {fileID: 183991799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1392412285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6155959472029225688, guid: f471d2c511213424d95eb1f46097abf5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1620832281603427137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f048ee66557214a8d2e3890ab10813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1404391743 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2895804091168044168, guid: f471d2c511213424d95eb1f46097abf5,
@@ -7272,6 +7284,11 @@ PrefabInstance:
       propertyPath: combinationValue
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2190825119143416787, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.992089
+      objectReference: {fileID: 0}
     - target: {fileID: 2238240349261808134, guid: f471d2c511213424d95eb1f46097abf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7332,6 +7349,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2776031631258195086, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.003495
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776031631258195086, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9983
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776031631258195086, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.4702
+      objectReference: {fileID: 0}
     - target: {fileID: 3767896284474208746, guid: f471d2c511213424d95eb1f46097abf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7389,6 +7421,11 @@ PrefabInstance:
       objectReference: {fileID: 461115836}
     - target: {fileID: 5983217872458232028, guid: f471d2c511213424d95eb1f46097abf5,
         type: 3}
+      propertyPath: doors.Array.data[0]
+      value: 
+      objectReference: {fileID: 1392412285}
+    - target: {fileID: 5983217872458232028, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
       objectReference: {fileID: 1877447306}
@@ -7407,6 +7444,21 @@ PrefabInstance:
       propertyPath: enemies.Array.data[3]
       value: 
       objectReference: {fileID: 794243555}
+    - target: {fileID: 6045000058954824748, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0059937
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045000058954824748, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9987
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045000058954824748, guid: f471d2c511213424d95eb1f46097abf5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.4618
+      objectReference: {fileID: 0}
     - target: {fileID: 6759095155554716397, guid: f471d2c511213424d95eb1f46097abf5,
         type: 3}
       propertyPath: m_LocalPosition.x
