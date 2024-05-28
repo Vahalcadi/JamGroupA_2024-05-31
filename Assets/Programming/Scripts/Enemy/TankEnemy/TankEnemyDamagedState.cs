@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class TankEnemyAttackState : EnemyState
+public class TankEnemyDamagedState : EnemyState
 {
     private TankEnemy enemy;
-    public TankEnemyAttackState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, TankEnemy _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
+    public TankEnemyDamagedState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, TankEnemy _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.enemy = _enemy;
     }
@@ -11,13 +13,12 @@ public class TankEnemyAttackState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        enemy.damageTakenEffect.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
-
-        enemy.lastTimeAttacked = Time.time;
         enemy.IsDamaged = false;
     }
 
@@ -28,6 +29,6 @@ public class TankEnemyAttackState : EnemyState
         enemy.SetZeroVelocity();
 
         if (triggerCalled)
-            stateMachine.ChangeState(enemy.IdleState);
+            stateMachine.ChangeState(enemy.BattleState);
     }
 }

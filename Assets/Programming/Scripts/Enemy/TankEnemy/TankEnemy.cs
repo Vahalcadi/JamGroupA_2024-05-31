@@ -8,6 +8,8 @@ public class TankEnemy : Enemy
     public TankEnemyBattleState BattleState { get; private set; }
     public TankEnemyAttackState AttackState { get; private set; }
 
+    public TankEnemyDamagedState DamagedState { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -15,7 +17,7 @@ public class TankEnemy : Enemy
         IdleState = new TankEnemyIdleState(this, stateMachine, "Idle", this);
         BattleState = new TankEnemyBattleState(this, stateMachine, "Move", this);
         AttackState = new TankEnemyAttackState(this, stateMachine, "Attack", this);
-
+        DamagedState = new TankEnemyDamagedState(this, stateMachine, "Damaged", this);
     }
 
     protected override void Start()

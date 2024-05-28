@@ -29,6 +29,8 @@ public class TankEnemyBattleState : EnemyState
     {
         base.Update();
         stateTimer = enemy.battleTime;
+        if (enemy.IsDamaged)
+            stateMachine.ChangeState(enemy.DamagedState);
         if ((new Vector2(player.transform.position.x, player.transform.position.z) - new Vector2(enemy.transform.position.x, enemy.transform.position.z)).magnitude < enemy.attackDistance)
         {
 

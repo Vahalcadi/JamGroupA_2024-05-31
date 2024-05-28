@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellcasterEnemyAttackState : EnemyState
+public class SpellcasterEnemyDamagedState : EnemyState
 {
     private SpellcasterEnemy enemy;
-    public SpellcasterEnemyAttackState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, SpellcasterEnemy _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
+    public SpellcasterEnemyDamagedState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, SpellcasterEnemy _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.enemy = _enemy;
     }
@@ -11,13 +13,12 @@ public class SpellcasterEnemyAttackState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        enemy.damageTakenEffect.Play();
     }
 
     public override void Exit()
     {
         base.Exit();
-
-        enemy.lastTimeAttacked = Time.time;
         enemy.IsDamaged = false;
     }
 

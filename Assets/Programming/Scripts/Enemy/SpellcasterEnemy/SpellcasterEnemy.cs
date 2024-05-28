@@ -7,6 +7,7 @@ public class SpellcasterEnemy : Enemy
     public SpellcasterEnemyIdleState IdleState { get; private set; }
     public SpellcasterEnemyBattleState BattleState { get; private set; }
     public SpellcasterEnemyAttackState AttackState { get; private set; }
+    public SpellcasterEnemyDamagedState DamagedState { get; private set; }
 
 
     protected override void Awake()
@@ -16,7 +17,7 @@ public class SpellcasterEnemy : Enemy
         IdleState = new SpellcasterEnemyIdleState(this, stateMachine, "Idle", this);
         BattleState = new SpellcasterEnemyBattleState(this, stateMachine, "Move", this);
         AttackState = new SpellcasterEnemyAttackState(this, stateMachine, "Attack", this);
-
+        DamagedState = new SpellcasterEnemyDamagedState(this, stateMachine, "Damaged", this);
     }
 
     protected override void Start()

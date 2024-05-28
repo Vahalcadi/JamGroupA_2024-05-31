@@ -27,12 +27,8 @@ public class SpellcasterEnemyBattleState : EnemyState
     {
         base.Update();
 
-        /*if ((player.position - enemy.transform.position).magnitude < enemy.attackDistance)
-        {
-            if (CanAttack())
-                stateMachine.ChangeState(enemy.AttackState);
-
-        }*/
+        if (enemy.IsDamaged)
+            stateMachine.ChangeState(enemy.DamagedState);
 
         enemy.transform.LookAt(player);
 
