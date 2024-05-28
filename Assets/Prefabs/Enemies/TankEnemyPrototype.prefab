@@ -109,9 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCheck: {fileID: 8273605152001952642}
   attackCheckRadius: 3
-  maxHealth: 5
+  maxHealth: 11
   speed: 5
-  damage: 3
+  damage: 2
   knockbackPower: 0
   knockbackDuration: 0
   whatIsPlayer:
@@ -362,6 +362,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4259274350831540713, guid: 2512044672c67b2468d425f8418d9ce2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f301d4a1f6c015949b41208386714d24, type: 2}
     - target: {fileID: 4555657541560899426, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -79,9 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCheck: {fileID: 5258012119424173715}
   attackCheckRadius: 0
-  maxHealth: 2
+  maxHealth: 4
   speed: 3
-  damage: 1
+  damage: 4
   knockbackPower: 20
   knockbackDuration: 0.07
   whatIsPlayer:
@@ -290,6 +290,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5433799559818585055, guid: 02f9c698caf3a4d45971fc000ba6f879,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8be8e1d21fc4f34c97d00d439ed40e2, type: 2}
+    - target: {fileID: 6027546881486742985, guid: 02f9c698caf3a4d45971fc000ba6f879,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8be8e1d21fc4f34c97d00d439ed40e2, type: 2}
     - target: {fileID: 6429146979233720722, guid: 02f9c698caf3a4d45971fc000ba6f879,
         type: 3}
       propertyPath: m_Layer
