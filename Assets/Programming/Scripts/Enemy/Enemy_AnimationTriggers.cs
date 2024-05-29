@@ -11,6 +11,11 @@ public class Enemy_AnimationTriggers : MonoBehaviour
         enemy.AnimationFinishTrigger();
     }
 
+    private void PlayAttackVFX()
+    {
+        enemy.attackVFX.Play();
+    }
+
     private void AttackTrigger()
     {
         enemy.AnimationAttackTrigger();

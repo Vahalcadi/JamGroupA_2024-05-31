@@ -11,6 +11,7 @@ public class Enemy : Entity
     [Header("VFX")]
     public ParticleSystem damageTakenEffect;
     public VisualEffect damageTakenEffect1;
+    public VisualEffect attackVFX;
     private Material material;
     private bool hasDamageCoroutineStarted;
 
