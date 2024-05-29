@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -42,7 +43,8 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
+        anim = this.GetComponentsInChildren<Animator>().First(x => x.gameObject.transform.parent != transform.parent);
         rb = GetComponent<Rigidbody>();
         currentHP = maxHealth;
 
