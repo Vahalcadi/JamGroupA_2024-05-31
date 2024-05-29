@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Enemy : Entity
 {
@@ -8,7 +9,7 @@ public class Enemy : Entity
 
     [Header("VFX")]
     public ParticleSystem damageTakenEffect;
-    public ParticleSystem damageTakenEffect1;
+    public VisualEffect damageTakenEffect1;
 
     [Header("Stunned info")]
     public float stunCooldown = 1;
@@ -46,6 +47,7 @@ public class Enemy : Entity
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        damageTakenEffect1.Play();
         IsDamaged = true;
     }
 
