@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -10,6 +11,8 @@ public class Enemy : Entity
     [Header("VFX")]
     public ParticleSystem damageTakenEffect;
     public VisualEffect damageTakenEffect1;
+    private Material material;
+    private bool hasDamageCoroutineStarted;
 
     [Header("Stunned info")]
     public float stunCooldown = 1;
@@ -48,7 +51,22 @@ public class Enemy : Entity
     {
         base.TakeDamage(damage);
         damageTakenEffect1.Play();
+        
+        StartCoroutine(ShowDamageVFX());
         IsDamaged = true;
+    }
+
+    private IEnumerator ShowDamageVFX()
+    {
+        if (hasDamageCoroutineStarted)
+            yield return null;
+
+        material = GetComponentInChildren<Renderer>().material;
+        hasDamageCoroutineStarted = true;
+        material.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        material.color = Color.white;
+        hasDamageCoroutineStarted = false;
     }
 
     public virtual void GetStunned()
