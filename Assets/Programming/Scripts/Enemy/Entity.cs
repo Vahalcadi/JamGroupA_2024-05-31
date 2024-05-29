@@ -22,7 +22,7 @@ public class Entity : MonoBehaviour
     protected bool isKnocked;
 
     public int Damage { get { return damage; } }
-    public int CurrentHP { get { return currentHP; } }
+    public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public int MaxHealth { get { return maxHealth; } }
 
     public int Speed { get { return speed; } }
