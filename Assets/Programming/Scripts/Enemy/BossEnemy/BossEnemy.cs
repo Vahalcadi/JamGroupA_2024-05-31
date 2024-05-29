@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BossEnemy : Enemy
@@ -6,7 +7,7 @@ public class BossEnemy : Enemy
     public BoxCollider cd;
     public LayerMask whatIsGround;
     public GameObject projectile;
-    public Transform projectileSpawner;
+    public List<Transform> projectileSpawners;
     public float shootCooldown;
     [HideInInspector] public float lastTimeShoot;
     public int projectileDamage;
@@ -58,8 +59,15 @@ public class BossEnemy : Enemy
 
     public void FireProjectiles()
     {
-        GameObject projectile = Instantiate(this.projectile, projectileSpawner.position, projectileSpawner.rotation);
-        projectile.GetComponent<Projectile>().Damage = projectileDamage;
+        foreach (Transform ps in projectileSpawners)
+        {
+            GameObject projectile = Instantiate(this.projectile, ps.position, Quaternion.Euler(this.projectile.transform.rotation.eulerAngles.x, ps.rotation.eulerAngles.y, this.projectile.transform.rotation.eulerAngles.z));
+            var projectileRotation = projectile.transform.eulerAngles;
+            projectile.transform.LookAt(PlayerManager.Instance.Player.transform.position);
+            projectile.transform.rotation = Quaternion.Euler(projectile.transform.rotation.eulerAngles.x - 5, projectileRotation.y, projectileRotation.z);
+            projectile.GetComponent<Projectile>().Damage = projectileDamage;
+        }
+
     }
 
     public void FindPosition()
