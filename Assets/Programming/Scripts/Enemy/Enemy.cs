@@ -52,7 +52,8 @@ public class Enemy : Entity
         base.TakeDamage(damage);
         damageTakenEffect1.Play();
         
-        StartCoroutine(ShowDamageVFX());
+        if(this.isActiveAndEnabled)
+            StartCoroutine(ShowDamageVFX());
         IsDamaged = true;
     }
 
