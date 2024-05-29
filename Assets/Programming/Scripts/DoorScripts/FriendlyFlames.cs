@@ -19,6 +19,10 @@ public class FriendlyFlames : Pickable
         {
             base.OnTriggerEnter(other);
 
+            var player = other.gameObject.GetComponent<Player>();
+
+            player.HealToFull();
+
             GameManager.Instance.CollectFlame();
             HUDManager.Instance.UpdateFlameSpriteUI(flameNumber);
             gameObject.SetActive(false);

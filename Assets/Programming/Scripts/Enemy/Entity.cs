@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -22,7 +23,7 @@ public class Entity : MonoBehaviour
     protected bool isKnocked;
 
     public int Damage { get { return damage; } }
-    public int CurrentHP { get { return currentHP; } }
+    public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public int MaxHealth { get { return maxHealth; } }
 
     public int Speed { get { return speed; } }
@@ -43,6 +44,7 @@ public class Entity : MonoBehaviour
     protected virtual void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        //anim = this.GetComponentsInChildren<Animator>().First(x => x.gameObject.transform.parent != transform.parent);
         rb = GetComponent<Rigidbody>();
         currentHP = maxHealth;
 

@@ -100,6 +100,12 @@ public class Player : Entity
             GameManager.Instance.EndGame("You Lost!, Play Again? agagagag");
     }
 
+    public void HealToFull()
+    {
+        CurrentHP = MaxHealth;
+        HUDManager.Instance.UpdateHealthBar();
+    }
+
     public void Look()
     {
         if (Input == Vector3.zero)
