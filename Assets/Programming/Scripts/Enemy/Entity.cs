@@ -43,8 +43,8 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        //anim = GetComponentInChildren<Animator>();
-        anim = this.GetComponentsInChildren<Animator>().First(x => x.gameObject.transform.parent != transform.parent);
+        anim = GetComponentInChildren<Animator>();
+        //anim = this.GetComponentsInChildren<Animator>().First(x => x.gameObject.transform.parent != transform.parent);
         rb = GetComponent<Rigidbody>();
         currentHP = maxHealth;
 

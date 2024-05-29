@@ -520,12 +520,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 236860597}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &248770121 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5271078210220291962, guid: 43f0f01731e6c7a42a376ce5481e116d,
-    type: 3}
-  m_PrefabInstance: {fileID: 424386391}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &258091522 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5468546475336870659, guid: 900ae5a1fec8c384d931559a29cdf806,
@@ -1474,7 +1468,7 @@ PrefabInstance:
         type: 3}
       propertyPath: projectileSpawner
       value: 
-      objectReference: {fileID: 248770121}
+      objectReference: {fileID: 847276890}
     - target: {fileID: 8354851532688676617, guid: 43f0f01731e6c7a42a376ce5481e116d,
         type: 3}
       propertyPath: shootStateCooldown
@@ -3051,6 +3045,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3764271184659270231, guid: 150226c5ab7139f439f501d72827b87d,
     type: 3}
   m_PrefabInstance: {fileID: 829118093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &847276890 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2579002121255013005, guid: 43f0f01731e6c7a42a376ce5481e116d,
+    type: 3}
+  m_PrefabInstance: {fileID: 424386391}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &854344724 stripped
 Transform:
