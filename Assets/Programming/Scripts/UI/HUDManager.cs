@@ -12,6 +12,7 @@ public class HUDManager : MonoBehaviour
     private Player playerInstance;
 
     [SerializeField] List<Image> friendlyFlames;
+    public List<Image> dashImages;
 
     private void Awake()
     {
@@ -45,36 +46,22 @@ public class HUDManager : MonoBehaviour
         friendlyFlames[index].color = Color.white;
     }
 
-    /*public void HealthBarUpdate()
+    public void SetCooldownOf(Image _image)
     {
-        fillHealth.fillAmount = playerCall.playerHealth / startHealth;
-    }*/
-
-
-    /*[SerializeField] public FriendlyFlames[] flamesArray = new FriendlyFlames[3];
-    [SerializeField] public GameObject[] flamesImagesArray = new GameObject[3];
-    [SerializeField] public Image fillHealth;
-    [SerializeField] public Player playerCall;
-    [SerializeField] public TMP_Text keysText;
-    [SerializeField] GameManager gameManager;
-
-    float startHealth;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        startHealth = playerCall.playerHealth;
+        if (_image.fillAmount >= 1)
+            _image.fillAmount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator CheckCooldownOf(Image _image, float _cooldown)
     {
-        SpriteUpdate();
-        HealthBarUpdate();
-        KeyTextUpdate();
-    } 
+        while (_image.fillAmount < 1)
+        {
+            _image.fillAmount += 1 / _cooldown * Time.deltaTime;
+            yield return null;
+        }
 
-    */
+        yield return null;
+    }
 }
 
 

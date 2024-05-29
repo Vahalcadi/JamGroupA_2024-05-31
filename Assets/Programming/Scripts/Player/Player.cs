@@ -62,10 +62,12 @@ public class Player : Entity
 
         dashCooldownTimer -= Time.deltaTime;
 
-        if (dashUses == 0)
+        if (dashUses <= 0)
         {
             dashUses = maxDashUses;
             dashCooldownTimer = dashCooldown;
+
+            HUDManager.Instance.dashImages.ForEach(di => StartCoroutine(HUDManager.Instance.CheckCooldownOf(di, dashCooldown)));
         }
 
         stateMachine.CurrentState.Update();
@@ -87,6 +89,7 @@ public class Player : Entity
         {
             if (dashUses > 0)
             {
+                HUDManager.Instance.SetCooldownOf(HUDManager.Instance.dashImages[dashUses - 1]);
                 stateMachine.ChangeState(DashState);
             }
         }
