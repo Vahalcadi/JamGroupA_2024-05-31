@@ -89,7 +89,7 @@ public class Player : Entity
         {
             if (dashUses > 0)
             {
-                HUDManager.Instance.SetCooldownOf(HUDManager.Instance.dashImages[dashUses - 1]);
+                
                 stateMachine.ChangeState(DashState);
             }
         }
@@ -100,7 +100,7 @@ public class Player : Entity
         base.TakeDamage(damage);
         HUDManager.Instance.UpdateHealthBar();
         if (CurrentHP == 0)
-            GameManager.Instance.EndGame("You Lost!, Play Again? agagagag");
+            GameManager.Instance.EndGame("You Lost!, Play Again?");
     }
 
     public void HealToFull()

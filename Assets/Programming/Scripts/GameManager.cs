@@ -5,9 +5,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("The zone that only opens when the player has all the flames")]
-    [SerializeField] private GameObject endZone;
-
     [Header("Must be equal to the number of flames GameObject inside the game")]
     [SerializeField] private int totalNumberOfFlames;
 
