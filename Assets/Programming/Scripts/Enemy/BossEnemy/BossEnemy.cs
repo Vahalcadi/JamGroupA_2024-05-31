@@ -29,6 +29,7 @@ public class BossEnemy : Enemy
     //public DeathBringerDeadState deadState { get; private set; }
     public BossEnemyShootState ShootState { get; private set; }
     public BossEnemyTeleportState TeleportState { get; private set; }
+    public BossEnemyDeadState DeadState { get; private set; }
 
     protected override void Awake()
     {
@@ -39,6 +40,7 @@ public class BossEnemy : Enemy
         AttackState = new BossEnemyAttackState(this, stateMachine, "Attack", this);
         ShootState = new BossEnemyShootState(this, stateMachine, "Shoot", this);
         TeleportState = new BossEnemyTeleportState(this, stateMachine, "Teleport", this);
+        DeadState = new BossEnemyDeadState(this, stateMachine, "Dead", this);
     }
 
     protected override void Start()
@@ -56,6 +58,15 @@ public class BossEnemy : Enemy
 
     }
 
+    public override void TakeDamage(int damage)
+    {
+        CurrentHP = Mathf.Clamp(CurrentHP - damage, 0, MaxHealth);
+
+        StartCoroutine(HitKnockback());
+
+        if (CurrentHP <= 0)
+            stateMachine.ChangeState(DeadState);
+    }
 
     public void FireProjectiles()
     {

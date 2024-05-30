@@ -22,6 +22,7 @@ public class PlayerDashState : PlayerState
         inputMagnitude = player.Input.normalized.magnitude;
 
         player.dashUses--;
+        HUDManager.Instance.SetCooldownOf(HUDManager.Instance.dashImages[player.dashUses]);
         stateTimer = player.dashDuration;
 
 
