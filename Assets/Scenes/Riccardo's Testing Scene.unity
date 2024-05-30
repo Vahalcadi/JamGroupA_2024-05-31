@@ -1467,6 +1467,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: ColorBySpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key0.g
+      value: 0.50775915
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632810295172093439, guid: 592117d3491850c409774267fb556d4c,
+        type: 3}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4308761189757332885, guid: 592117d3491850c409774267fb556d4c,
         type: 3}
       propertyPath: m_LocalPosition.x
