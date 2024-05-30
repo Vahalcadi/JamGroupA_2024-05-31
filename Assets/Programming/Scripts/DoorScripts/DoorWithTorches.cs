@@ -64,6 +64,7 @@ public class DoorWithTorches : GenericDoor
         {
             isOpen = true;
             anim.SetBool("isOpen", isOpen);
+            AudioManager.instance.PlaySFX(2, null);
         }
 
     }

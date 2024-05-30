@@ -11,7 +11,7 @@ public class Key : Pickable
             base.OnTriggerEnter(other);
 
             GameManager.Instance.CollectKey();
-
+            AudioManager.instance.PlaySFX(1, null);
             gameObject.SetActive(false);
         }
     }

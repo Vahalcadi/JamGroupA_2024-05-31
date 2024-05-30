@@ -22,8 +22,11 @@ public class Torches : MonoBehaviour
         {      
             isInteractable = false;
             Debug.LogWarning(combinationValue);
+
             TorchLight.SetActive(true);
             TorchVFX.SetActive(true);
+            AudioManager.instance.PlaySFX(0, transform);
+            
             DoorWithTorches.AddValueToPlayerCombination(combinationValue);
         }
     }
