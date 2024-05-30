@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5539438692941471760}
   - component: {fileID: 2939045207390742344}
   - component: {fileID: 8490162660433805179}
+  - component: {fileID: 8110616193386882388}
   m_Layer: 8
   m_Name: SpellcasterEnemyPrototype
   m_TagString: Untagged
@@ -90,7 +91,7 @@ MonoBehaviour:
     m_Bits: 128
   damageTakenEffect: {fileID: 5637257926955987096}
   damageTakenEffect1: {fileID: 7922098472302961138}
-  material: {fileID: 2100000, guid: d8be8e1d21fc4f34c97d00d439ed40e2, type: 2}
+  attackVFX: {fileID: 0}
   stunCooldown: 1
   attackCooldown: 1
   attackDistance: 0
@@ -123,6 +124,28 @@ CapsuleCollider:
   m_Height: 1.5176718
   m_Direction: 1
   m_Center: {x: 0, y: 0.2588359, z: 0}
+--- !u!195 &8110616193386882388
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371596641064321546}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4219538482507324424
 GameObject:
   m_ObjectHideFlags: 0
