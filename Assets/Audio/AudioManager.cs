@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
+using UnityEngine.Audio;
+using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float sfxMinimumDistance;
     [SerializeField] private AudioSource[] sfx;
     [SerializeField] private AudioSource[] bgm;
+    [SerializeField] private UI_VolumeSlider[] volumeSliders;
     public bool playBgm;
     private int bgmIndex;
 
@@ -22,9 +26,17 @@ public class AudioManager : MonoBehaviour
         else
             instance = this;
 
+             
+
         Invoke("AllowSFX", 1f);
     }
-
+    private void Start()
+    {
+        foreach (var slider in volumeSliders)
+        {
+            slider.LoadSlider(PlayerPrefs.GetFloat(slider.parameter));
+        }
+    }
     private void Update()
     {
         if (!playBgm)
