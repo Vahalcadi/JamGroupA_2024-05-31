@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.VFX;
 
 public class Enemy : Entity
@@ -7,6 +8,9 @@ public class Enemy : Entity
     [SerializeField] protected LayerMask whatIsPlayer;
 
     public bool IsDamaged { get; set; }
+
+    [Header("AI")]
+    private NavMeshAgent agent;
 
     [Header("VFX")]
     public ParticleSystem damageTakenEffect;
@@ -33,6 +37,7 @@ public class Enemy : Entity
     protected override void Awake()
     {
         base.Awake();
+        agent = GetComponent<NavMeshAgent>();
         stateMachine = new EnemyStateMachine();
     }
 
@@ -74,6 +79,20 @@ public class Enemy : Entity
     public virtual void GetStunned()
     {
         stunCooldownTimer = stunCooldown;
+    }
+
+    public override void SetZeroVelocity()
+    {
+        base.SetZeroVelocity();
+        agent.velocity = Vector3.zero;
+
+    }
+
+    public override void MoveToPlayer()
+    {
+        //base.MoveToPlayer();
+
+        agent.SetDestination(new Vector3(PlayerManager.Instance.Player.transform.position.x, transform.position.y, PlayerManager.Instance.Player.transform.position.z));
     }
 
     public virtual bool CanBeStunned()

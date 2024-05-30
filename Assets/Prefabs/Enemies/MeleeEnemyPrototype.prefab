@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2985275182415329475}
   - component: {fileID: 4932140891249489391}
   - component: {fileID: 7332000820677070372}
-  - component: {fileID: 457124146884779902}
+  - component: {fileID: 7114045342356171563}
+  - component: {fileID: 667346253333805796}
   m_Layer: 8
   m_Name: MeleeEnemyPrototype
   m_TagString: Untagged
@@ -98,7 +99,29 @@ MonoBehaviour:
   minAttackCooldown: 0.35
   maxAttackCooldown: 0.55
   lastTimeAttacked: 0
---- !u!136 &457124146884779902
+--- !u!195 &7114045342356171563
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637400094163628601}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 0.5873512
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!136 &667346253333805796
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,9 +141,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5873512
-  m_Height: 2.0949025
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.01577568, y: 0.5408113, z: 0.059981465}
+  m_Center: {x: 0, y: 0.5, z: 0.04}
 --- !u!1 &3505119497701118629
 GameObject:
   m_ObjectHideFlags: 0
