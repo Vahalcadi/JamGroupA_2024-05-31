@@ -81,13 +81,22 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 8
+        m_Name: GroundSize
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Radius
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.71014655, y: 0.96566904, z: 1.3522552, w: 0}
+        m_Name: GroundColor
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -538,8 +547,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.92007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.07097848
       objectReference: {fileID: 0}
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
@@ -549,7 +563,7 @@ PrefabInstance:
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.00000026077032
       objectReference: {fileID: 0}
     - target: {fileID: 3592489769383576186, guid: 2512044672c67b2468d425f8418d9ce2,
         type: 3}
