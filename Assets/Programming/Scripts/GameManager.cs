@@ -1,4 +1,6 @@
+using System.Data.Common;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
         else
             Instance = this;
     }
+
 
     private void Update()
     {
