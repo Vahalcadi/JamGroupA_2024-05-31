@@ -22,6 +22,9 @@ public class BossEnemyAttackState : EnemyState
         base.Exit();
 
         enemy.lastTimeAttacked = Time.time;
+
+        enemy.MoveToPlayer();
+
     }
 
     public override void Update()

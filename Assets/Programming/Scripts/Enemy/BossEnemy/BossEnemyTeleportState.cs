@@ -35,5 +35,7 @@ public class BossEnemyTeleportState : EnemyState
         base.Exit();
 
         enemy.MakeInvincible(false);
+        enemy.MoveToPlayer();
+
     }
 }

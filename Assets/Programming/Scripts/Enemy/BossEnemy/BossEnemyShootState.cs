@@ -33,6 +33,8 @@ public class BossEnemyShootState : EnemyState
 
         enemy.transform.LookAt(player);
 
+        enemy.MoveToPlayer();
+
         enemy.transform.rotation = Quaternion.Euler(0, enemy.transform.eulerAngles.y, 0);
 
         if (shootStateTimer <= 0)

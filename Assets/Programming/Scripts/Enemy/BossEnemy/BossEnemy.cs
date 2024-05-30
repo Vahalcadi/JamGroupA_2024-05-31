@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossEnemy : Enemy
 {
+    [SerializeField] private float removeScaleWhenDamaged;
+
     public BoxCollider cd;
     public LayerMask whatIsGround;
     public GameObject projectile;
@@ -22,6 +24,7 @@ public class BossEnemy : Enemy
     public bool bossFightBegun;
     public float idleTime = 2;
     public float battleTime = 7;
+
 
     public BossEnemyIdleState IdleState { get; private set; }
     public BossEnemyBattleState BattleState { get; private set; }
@@ -61,6 +64,13 @@ public class BossEnemy : Enemy
     public override void TakeDamage(int damage)
     {
         CurrentHP = Mathf.Clamp(CurrentHP - damage, 0, MaxHealth);
+
+        if (CurrentHP > 0)
+        {
+            var newScale = new Vector3(transform.localScale.x - removeScaleWhenDamaged, transform.localScale.y - removeScaleWhenDamaged, transform.localScale.z - removeScaleWhenDamaged);
+
+            transform.localScale = newScale;
+        }
 
         StartCoroutine(HitKnockback());
 
