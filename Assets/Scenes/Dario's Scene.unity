@@ -10527,6 +10527,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1959757677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4393365343530424, guid: 150226c5ab7139f439f501d72827b87d, type: 3}
+      propertyPath: m_Asset
+      value: 
+      objectReference: {fileID: 8926484042661614526, guid: 054f4ea0a764b79418857b43c5c4c6d8,
+        type: 3}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.414238
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3600001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9012284
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6062135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7953019
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -105.368
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004502013462249829, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600506930147249729, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_Name
+      value: vfxgraph_TankAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764271184659270231, guid: 150226c5ab7139f439f501d72827b87d,
+        type: 3}
+      propertyPath: m_Name
+      value: TankEnemyPrototype
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 150226c5ab7139f439f501d72827b87d, type: 3}
 --- !u!1 &1977841601
 GameObject:
   m_ObjectHideFlags: 0
@@ -10649,3 +10727,4 @@ SceneRoots:
   - {fileID: 1977841604}
   - {fileID: 1825944362}
   - {fileID: 1953687570}
+  - {fileID: 1959757677}
