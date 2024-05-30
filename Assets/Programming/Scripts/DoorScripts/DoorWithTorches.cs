@@ -35,6 +35,9 @@ public class DoorWithTorches : GenericDoor
 
     private void CheckCombination()
     {
+        if (isOpen)
+            return;
+
         for(int i = 0; i < playerCombination.Count; i++)
         {
             if (playerCombination[i] == combination[i])
