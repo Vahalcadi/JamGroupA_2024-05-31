@@ -409,15 +409,325 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2859659164533533530, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+    - target: {fileID: 201940745857924811, guid: a50fac6fceb67aa42824fc02bd8eb81b,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6582542769970806540, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+    - target: {fileID: 201940745857924811, guid: a50fac6fceb67aa42824fc02bd8eb81b,
         type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 201940745857924811, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 201940745857924811, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 393956881374613291, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_Name
+      value: txt_ProgrammersCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 710398928502656072, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710398928502656072, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710398928502656072, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710398928502656072, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990849908720688090, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Roberto Vasiliu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174011425777219112, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174011425777219112, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174011425777219112, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174011425777219112, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198466117528945503, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 528.983
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198466117528945503, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -543.61523
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370197982698234989, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: 2D ARTISTS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480580945828908218, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Andrea D'Ambrosio
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532122295967747515, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532122295967747515, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532122295967747515, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532122295967747515, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185821532233465656, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185821532233465656, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185821532233465656, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185821532233465656, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194066226976652168, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Claudio Santise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277339821844856377, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Michele Azzinnaro
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062824314747033456, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_Name
+      value: txt_2DArtistsCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568021150360757203, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Davide Petrone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392452199773764662, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: PROGRAMMERS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564122637112777476, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 384.2975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564122637112777476, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 584.04205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592588485830504051, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592588485830504051, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592588485830504051, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592588485830504051, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050874193702436221, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_Name
+      value: txt_DesignersCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382939463574732318, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382939463574732318, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382939463574732318, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382939463574732318, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552629753999249406, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_Name
+      value: txt_3DArtistsCategory
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991265008053830782, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991265008053830782, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991265008053830782, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991265008053830782, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038795444578038025, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 392.8084
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038795444578038025, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 588.2975
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209588673150238701, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209588673150238701, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209588673150238701, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209588673150238701, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355590410990466813, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355590410990466813, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355590410990466813, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355590410990466813, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402065264810378122, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 386.4251
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402065264810378122, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -614.8941
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698381393373449327, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Elena Concu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296606701674243653, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296606701674243653, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296606701674243653, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296606701674243653, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7744387834769017810, guid: a50fac6fceb67aa42824fc02bd8eb81b,
         type: 3}
@@ -524,8 +834,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8280988002824540549, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Dario Giordano
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287649904303985716, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Chiara Diato
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398187345792318691, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: 3D ARTISTS
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780374615548635062, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780374615548635062, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780374615548635062, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780374615548635062, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790272967206576902, guid: a50fac6fceb67aa42824fc02bd8eb81b,
+        type: 3}
+      propertyPath: m_text
+      value: Riccardo Pallisco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4395620898875943018, guid: a50fac6fceb67aa42824fc02bd8eb81b, type: 3}
+    - {fileID: 5879863581213164135, guid: a50fac6fceb67aa42824fc02bd8eb81b, type: 3}
+    - {fileID: 3897524548160543465, guid: a50fac6fceb67aa42824fc02bd8eb81b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50fac6fceb67aa42824fc02bd8eb81b, type: 3}
