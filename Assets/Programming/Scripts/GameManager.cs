@@ -29,6 +29,19 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
+    private void Update()
+    {
+        //DEBUG: send player at the boss door and give him all flames
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            PlayerManager.Instance.Player.transform.position = new Vector3(-6, 0.58f, 156.4f);
+            numberOfFlamesCollected = 3;
+            HUDManager.Instance.UpdateFlameSpriteUI(1);
+            HUDManager.Instance.UpdateFlameSpriteUI(2);
+            HUDManager.Instance.UpdateFlameSpriteUI(3);
+        }
+    }
+
     public void EndGame(string dialog)
     {
         PauseGame(true);
