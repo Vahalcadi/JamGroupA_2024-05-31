@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2637400094163628601}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 30
   m_Drag: 0.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -82,11 +82,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCheck: {fileID: 5434251991403150527}
   attackCheckRadius: 0.8
-  maxHealth: 7
+  maxHealth: 18
   speed: 3
   damage: 3
   knockbackPower: 20
-  knockbackDuration: 0.1
+  knockbackDuration: 0
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
