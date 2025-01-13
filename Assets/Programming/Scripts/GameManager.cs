@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
+    private void Start()
+    {
+        PauseGame(false);
+    }
+
 
     private void Update()
     {
