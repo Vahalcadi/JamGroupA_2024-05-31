@@ -77,7 +77,7 @@ public class Player : Entity
 
     private void FixedUpdate()
     {
-        //Movement();
+        stateMachine.CurrentState.FixedUpdate();
     }
 
     public void AnimationTrigger() => stateMachine.CurrentState.AnimationFinishTrigger();
@@ -130,7 +130,8 @@ public class Player : Entity
 
     public void Movement()
     {
-        rb.MovePosition(transform.position + (transform.forward * Input.normalized.magnitude) * Speed * Time.fixedDeltaTime);
+        rb.velocity = Speed * Input.normalized.magnitude * transform.forward;
+        //rb.MovePosition(transform.position + (transform.forward * Input.normalized.magnitude) * Speed * Time.fixedDeltaTime);
         //rb.velocity = transform.position + (transform.forward * Input.normalized.magnitude) * Speed * Time.deltaTime;
     }
 }

@@ -3129,6 +3129,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7406247273072110697, guid: 0894c615d14cea34d956920f99081c14,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406247273072110697, guid: 0894c615d14cea34d956920f99081c14,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 68.19995
+      objectReference: {fileID: 0}
     - target: {fileID: 7693234110511170599, guid: 0894c615d14cea34d956920f99081c14,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12611,6 +12621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677748442400430927, guid: 11ef997f78a32e14887337b9b8eddcf4,
         type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677748442400430927, guid: 11ef997f78a32e14887337b9b8eddcf4,
+        type: 3}
       propertyPath: damage
       value: 3
       objectReference: {fileID: 0}
@@ -12623,6 +12638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attackCooldown
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239513492619311899, guid: 11ef997f78a32e14887337b9b8eddcf4,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5239513492619311899, guid: 11ef997f78a32e14887337b9b8eddcf4,
         type: 3}

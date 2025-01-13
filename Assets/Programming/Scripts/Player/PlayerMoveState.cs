@@ -32,6 +32,7 @@ public class PlayerMoveState : PlayerGroundedState
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        
+
+
     }
 }

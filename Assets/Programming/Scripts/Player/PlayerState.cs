@@ -35,15 +35,15 @@ public class PlayerState
         player.Input = new Vector3(player.InputManager.Movement().normalized.x, 0, player.InputManager.Movement().normalized.y);
     }
 
+    public virtual void FixedUpdate()
+    {
+
+    }
+
     public virtual void Exit()
     {
         player.anim.SetBool(animBoolName, false);
         player.weaponAnim.SetBool(animBoolName, false);
-    }
-
-    public virtual void FixedUpdate()
-    {
-
     }
 
     public virtual void AnimationFinishTrigger()
