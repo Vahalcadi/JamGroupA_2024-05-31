@@ -65,9 +65,9 @@ public class Entity : MonoBehaviour
     {
         isKnocked = true;
 
-        //rb.velocity = -transform.forward * knockbackPower;
+        rb.velocity = -transform.forward * knockbackPower;
 
-        rb.AddForce(-transform.forward * knockbackPower, ForceMode.VelocityChange);
+        //rb.AddForce(-transform.forward * knockbackPower, ForceMode.VelocityChange);
 
         yield return new WaitForSeconds(knockbackDuration);
 

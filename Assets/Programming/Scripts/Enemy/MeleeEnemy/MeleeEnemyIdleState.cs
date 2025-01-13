@@ -23,6 +23,8 @@ public class MeleeEnemyIdleState : MeleeEnemyGroundedState
     {
         base.Update();
 
+        enemy.SetZeroVelocity();
+
         /*if (stateTimer < 0)
         {
             stateMachine.ChangeState(enemy.MoveState);

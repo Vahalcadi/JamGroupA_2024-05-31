@@ -18,6 +18,7 @@ public class SpellcasterEnemyIdleState : SpellcasterEnemyGroundedState
     public override void Update()
     {
         base.Update();
+        enemy.SetZeroVelocity();
 
         /*if (stateTimer < 0)
         {

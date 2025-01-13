@@ -85,7 +85,6 @@ public class Enemy : Entity
     {
         base.SetZeroVelocity();
         agent.velocity = Vector3.zero;
-
     }
 
     public override void MoveToPlayer()

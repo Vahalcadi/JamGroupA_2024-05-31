@@ -37,6 +37,8 @@ public class BossEnemyIdleState : EnemyState
         //if (Input.GetKeyDown(KeyCode.V))
         //    stateMachine.ChangeState(enemy.teleportState);
 
+        enemy.SetZeroVelocity();
+
         if (stateTimer < 0 && enemy.bossFightBegun)
             stateMachine.ChangeState(enemy.BattleState);
 

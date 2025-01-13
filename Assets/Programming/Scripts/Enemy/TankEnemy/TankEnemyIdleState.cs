@@ -21,7 +21,9 @@ public class TankEnemyIdleState : TankEnemyGroundedState
     {
         base.Update();
 
-        if (stateTimer < 0)
-            stateMachine.ChangeState(enemy.BattleState);
+        enemy.SetZeroVelocity();
+
+        /*if (stateTimer < 0)
+            stateMachine.ChangeState(enemy.BattleState);*/
     }
 }
