@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerDashState : PlayerState
 {
-    float inputMagnitude;
     Quaternion rotation;
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
@@ -18,22 +17,24 @@ public class PlayerDashState : PlayerState
         if (stateTimer > 0)
             return;
 
+        Debug.Log(player.Input.normalized.magnitude);
+
         rotation = Quaternion.LookRotation(player.Input.AdjustToIsometricPlane(), Vector3.up);
-        inputMagnitude = player.Input.normalized.magnitude;
 
         player.dashUses--;
         HUDManager.Instance.SetCooldownOf(HUDManager.Instance.dashImages[player.dashUses]);
         stateTimer = player.dashDuration;
 
-
+        player.GetComponent<CapsuleCollider>().excludeLayers = player.maskToExclude;
         player.MakeInvincible(true);
     }
 
     public override void Exit()
     {
-        
 
         base.Exit();
+        player.GetComponent<CapsuleCollider>().excludeLayers = player.defaultExclude;
+
         player.MakeInvincible(false);
     }
 
@@ -42,13 +43,13 @@ public class PlayerDashState : PlayerState
         base.Update();
         
 
-        if (inputMagnitude == 0)
+        if (player.Input.normalized == Vector3.zero)
         {
             rb.velocity = player.transform.forward * player.dashSpeed;
         }
         else
         {          
-            rb.velocity = player.transform.forward * inputMagnitude * player.dashSpeed;
+            rb.velocity = player.Input.AdjustToIsometricPlane() * player.dashSpeed;
         }
 
 

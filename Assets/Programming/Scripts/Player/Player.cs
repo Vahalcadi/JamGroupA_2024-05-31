@@ -20,6 +20,10 @@ public class Player : Entity
     public float dashCooldown;
     [NonSerialized] public float dashCooldownTimer;
 
+    [Header("Dash Collision Infos")]
+    public LayerMask maskToExclude;
+    public LayerMask defaultExclude;
+
     /*[Header("Damage")]
     [SerializeField] private int damage;*/
 
